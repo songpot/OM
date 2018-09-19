@@ -1,0 +1,9 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cgw="http://tot.co.th/schema/cgw">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <cgw:getBalanceAndDate>
+         <subscriberNumber>tel:{0}</subscriberNumber>
+         <originTransactionID>111</originTransactionID>
+      </cgw:getBalanceAndDate>
+   </soapenv:Body>
+</soapenv:Envelope>

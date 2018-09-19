@@ -1,0 +1,9 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:imp="http://implementation.web.api.icc.services.osp.in.alcatel.com" xmlns:xsd="http://pojo.web.api.icc.services.osp.in.alcatel.com/xsd">
+  <soapenv:Header/>
+   <soapenv:Body>
+      <imp:getAllInformation>
+         <imp:subscriberLineId>{0}</imp:subscriberLineId>         
+         <imp:subscriberLineIdType>1</imp:subscriberLineIdType>
+      </imp:getAllInformation>
+   </soapenv:Body>
+</soapenv:Envelope>

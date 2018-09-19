@@ -1,0 +1,22 @@
+<soapenv:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:spa="http://nsn.com/npm/SoapProvisioningInterface/" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <spa:deleteService>
+         <spa:request>
+            <spa:service>
+               <spa:serviceIdentifier spa:serviceCode="CFS_PCS5000_INSTANCE"/>
+               <spa:attributes>
+                  <!--Mandatory Paramaters :-->
+                  <spa:attribute spa:identifying="true" spa:name="identifier" xsi:type="spa:singlevalue">
+                     <spa:value xsi:type="xsd:string">{0}</spa:value>
+                  </spa:attribute>
+                  <!--Optional Paramaters :-->
+                  <spa:attribute spa:name="imsi" xsi:type="spa:singlevalue">
+                     <spa:value xsi:type="xsd:string">{0}</spa:value>
+                  </spa:attribute>
+               </spa:attributes>
+            </spa:service>
+         </spa:request>
+      </spa:deleteService>
+   </soapenv:Body>
+</soapenv:Envelope>

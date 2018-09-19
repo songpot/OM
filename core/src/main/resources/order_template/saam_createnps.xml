@@ -1,0 +1,29 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:spa="http://nsn.com/npm/SoapProvisioningInterface/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <spa:createService>
+         <spa:request>
+            <spa:service>
+               <spa:serviceIdentifier spa:serviceCode="NPSProfileInstance"/>
+               <spa:attributes>
+                  <spa:attribute spa:name="Msisdn" xsi:type="spa:singlevalue">
+                     <spa:value xsi:type="xsd:string">{0}</spa:value>
+                  </spa:attribute>
+                  <spa:attribute spa:name="Imsi" xsi:type="spa:singlevalue">
+                     <spa:value xsi:type="xsd:string">{1}</spa:value>
+                  </spa:attribute>
+                  <spa:attribute spa:name="MMSActiveFlag" xsi:type="spa:singlevalue">
+                     <spa:value xsi:type="xsd:boolean">true</spa:value>
+                  </spa:attribute>
+                  <spa:attribute spa:name="PrepaidFlag" xsi:type="spa:singlevalue">
+                     <spa:value xsi:type="xsd:boolean">true</spa:value>
+                  </spa:attribute>
+                  <spa:attribute spa:name="SMSActiveFlag" xsi:type="spa:singlevalue">
+                     <spa:value xsi:type="xsd:boolean">true</spa:value>
+                  </spa:attribute>
+               </spa:attributes>
+            </spa:service>
+         </spa:request>
+      </spa:createService>
+   </soapenv:Body>
+</soapenv:Envelope>

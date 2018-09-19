@@ -1,0 +1,33 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:oed="http://tot.co.th/totom/interface/oedata">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <oed:SubmitRequest>
+         <OrderId>{2}</OrderId>
+         <SourceSystemId>OMWeb</SourceSystemId>
+         <OrderUserId>{3}</OrderUserId>
+         <OrderDateTime>{1}</OrderDateTime>
+         <OrderType>SUBMIT</OrderType>
+         <OperationCode>DELSUB</OperationCode>
+         <OrderItems>
+            <OrderItem>
+               <OrderItemType>ACCESS</OrderItemType>
+               <OrderItemAction>DEL</OrderItemAction>
+               <OrderItemId>ACCESS{2}</OrderItemId>
+               <OrderItemParentId/>
+            </OrderItem>
+            <OrderItem>
+               <OrderItemType>MSISDN</OrderItemType>
+               <OrderItemAction>DEL</OrderItemAction>
+               <OrderItemId>MSISDN{2}</OrderItemId>
+               <OrderItemParentId>ACCESS{2}</OrderItemParentId>
+               <Attributes>
+                  <Attribute>
+                     <Name>Number</Name>
+                     <Value>{0}</Value>
+                  </Attribute>
+               </Attributes>
+            </OrderItem>
+         </OrderItems>
+      </oed:SubmitRequest>
+   </soapenv:Body>
+</soapenv:Envelope>

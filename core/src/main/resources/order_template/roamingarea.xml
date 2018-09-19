@@ -1,0 +1,51 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:oed="http://tot.co.th/totom/interface/oedata" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
+   <soapenv:Body>
+      <oed:SubmitRequest>
+        <OrderId>{2}</OrderId>
+         <SourceSystemId>OMWeb</SourceSystemId>
+         <OrderUserId>{3}</OrderUserId>
+         <OrderDateTime>{1}</OrderDateTime>
+         <OrderType>SUBMIT</OrderType>
+         <OperationCode>MODROAMINGAREA</OperationCode>
+         <OrderItems>
+            <OrderItem>
+              <OrderItemType>ACCESS</OrderItemType>
+               <OrderItemAction>MOD</OrderItemAction>
+               <OrderItemId>ACCESS{2}</OrderItemId>
+               <OrderItemParentId/>
+            </OrderItem>
+
+            <OrderItem>
+               <OrderItemType>SERVICE</OrderItemType>
+               <OrderItemAction>MOD</OrderItemAction>
+               <OrderItemId>SERVICE{2}</OrderItemId>
+               <OrderItemParentId>ACCESS{2}</OrderItemParentId>
+               <Attributes>
+                  <Attribute>
+                     <Name>ServiceId</Name>
+                     <Value>Domestic Roaming</Value>
+                  </Attribute>
+                  <Attribute>
+                     <Name>Service_area</Name>
+                     <Value>{4}</Value>
+                  </Attribute>
+               </Attributes>
+               <OrderItemCode/>
+            </OrderItem>
+            <OrderItem>
+               <OrderItemType>MSISDN</OrderItemType>
+               <OrderItemAction>REF</OrderItemAction>
+               <OrderItemId>MSISDN{2}</OrderItemId>
+               <OrderItemParentId>ACCESS{2}</OrderItemParentId>
+               <Attributes>
+                  <Attribute>
+                     <Name>Number</Name>
+                     <Value>{0}</Value>
+                  </Attribute>
+               </Attributes>
+               <OrderItemCode/>
+            </OrderItem>
+         </OrderItems>
+      </oed:SubmitRequest>
+   </soapenv:Body>
+</soapenv:Envelope>

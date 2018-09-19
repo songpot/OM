@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns:beans="http://www.springframework.org/schema/beans"
+             xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+              http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.0.xsd">
+
+    <http lowercase-comparisons="false" entry-point-ref="authenticationEntryPoint" >
+        <intercept-url pattern="/captcha/**" filters="none"/>
+        <intercept-url pattern="/captcha/imgs/**" filters="none"/>
+        <intercept-url pattern="/latest-jquery/**" filters="none"/>
+        <intercept-url pattern="/latest-jquery-ui/**" filters="none"/>
+        <intercept-url pattern="/images/**" filters="none"/>
+        <intercept-url pattern="/styles/**" filters="none"/>
+        <intercept-url pattern="/scripts/**" filters="none"/>          
+        <intercept-url pattern="/ussd_web/**" filters="none"/>  
+        <intercept-url pattern="/app/admin/**" access="ROLE_ADMIN"/>
+        <!-- SONGPON 26/9/2555 -->          
+        <intercept-url pattern="/css/**" filters="none"/>  
+        <intercept-url pattern="/js/**" filters="none"/>
+        
+        
+        <intercept-url pattern="/app/stickyImg*" access="ROLE_ADMIN,ROLE_EDITOR,ROLE_USER,ROLE_CALLCENTER,ROLE_UPERCALLCENTER,ROLE_MANAGER"/>
+        <intercept-url pattern="/app/report/**" access="ROLE_ADMIN,ROLE_USER"/>
+        <!-- Wanatsanan 01/03/2016 --> 
+        <intercept-url pattern="/app/order/**" access="ROLE_ADMIN,ROLE_EDITOR,ROLE_USER,ROLE_CALLCENTER,ROLE_UPERCALLCENTER,ROLE_MANAGER,ROLE_CHECKERROR"/>
+        <intercept-url pattern="/app/mainMenu*" access="ROLE_ADMIN,ROLE_EDITOR,ROLE_USER,ROLE_CALLCENTER,ROLE_UPERCALLCENTER,ROLE_MANAGER,ROLE_CHECKERROR"/>
+         <!-- Wanatsanan 01/03/2016 --> 
+        <intercept-url pattern="/app/order/queryError*" access="ROLE_ADMIN,ROLE_EDITOR,ROLE_CHECKERROR"/>
+        <!--  -->
+        <intercept-url pattern="/app/admin/**" access="ROLE_ADMIN"/>
+        <intercept-url pattern="/app/passwordHint*" access="ROLE_ANONYMOUS,ROLE_ADMIN,ROLE_USER,ROLE_CALLCENTER,ROLE_UPERCALLCENTER,ROLE_MANAGER"/>
+        <intercept-url pattern="/app/signup*" access="ROLE_ANONYMOUS,ROLE_ADMIN,ROLE_USER,ROLE_CALLCENTER,ROLE_UPERCALLCENTER,ROLE_MANAGER"/>
+        <intercept-url pattern="/app/**" access="ROLE_ADMIN,ROLE_USER,ROLE_CALLCENTER,ROLE_UPERCALLCENTER,ROLE_MANAGER,ROLE_CHECKERROR"/>
+<!--         <form-login login-page="/login" authentication-failure-url="/login?error=true" login-processing-url="/j_security_check"/> -->
+        <remember-me user-service-ref="userDao" key="e37f4b31-0c45-11dd-bd0b-0800200c9a66"/>
+		<custom-filter position="FORM_LOGIN_FILTER" ref="customUsernamePasswordAuthenticationFilter" />
+       
+    </http>
+    
+<!--     <http auto-config="true" lowercase-comparisons="false" entry-point-ref="crmAuthenticationEntryPoint"> -->
+<!--         <intercept-url pattern="/images/**" filters="none"/> -->
+<!--         <intercept-url pattern="/styles/**" filters="none"/> -->
+<!--         <intercept-url pattern="/scripts/**" filters="none"/>   -->
+<!--         <intercept-url pattern="/app/admin/**" access="ROLE_ADMIN"/> -->
+<!--         <intercept-url pattern="/app/passwordHint*" access="ROLE_ANONYMOUS,ROLE_ADMIN,ROLE_USER"/> -->
+<!--         <intercept-url pattern="/app/signup*" access="ROLE_ANONYMOUS,ROLE_ADMIN,ROLE_USER"/> -->
+<!--         <intercept-url pattern="/app/**" access="ROLE_ADMIN,ROLE_USER"/> -->
+<!--         <http-basic/> -->
+<!--     </http> -->
+
+    <authentication-manager alias="authenticationManager">
+        <authentication-provider user-service-ref="userDao">
+            <password-encoder ref="passwordEncoder"/>
+        </authentication-provider>
+    </authentication-manager>
+    
+    <!-- Override the default password-encoder (SHA) by uncommenting the following and changing the class -->
+    <!-- <bean id="passwordEncoder" class="org.springframework.security.authentication.encoding.ShaPasswordEncoder"/> -->
+
+    <global-method-security>
+        <protect-pointcut expression="execution(* *..service.UserManager.getUsers(..))" access="ROLE_ADMIN"/>
+        <protect-pointcut expression="execution(* *..service.UserManager.removeUser(..))" access="ROLE_ADMIN"/>
+    </global-method-security>
+    
+    <beans:bean id="customUsernamePasswordAuthenticationFilter" class="net.tot3g.omclient.webapp.util.CustomUsernamePasswordAuthenticationFilter">
+    	<beans:property name="authenticationManager" ref="authenticationManager"></beans:property>
+    	<beans:property name="crmAuthenticationManager" ref="crmAuthenticationManager"></beans:property>
+    	<beans:property name="filterProcessesUrl" value="/j_security_check"></beans:property>
+    	<beans:property name="postOnly" value="false"></beans:property>
+    	<beans:property name="authenticationFailureHandler" ref="failureHandler"></beans:property>
+    </beans:bean>
+    
+   	<beans:bean id="failureHandler" class="org.springframework.security.web.authentication.ExceptionMappingAuthenticationFailureHandler">
+		 <beans:property name="defaultFailureUrl" value="/login?error=true"></beans:property>
+		 <beans:property name="exceptionMappings">
+        	<beans:props>    
+        		<beans:prop key="org.springframework.security.authentication.LockedException">/login?error=1</beans:prop>
+        		<beans:prop key="org.springframework.security.authentication.BadCredentialsException">/login?error=2</beans:prop>
+        	</beans:props>  
+    	</beans:property>
+	</beans:bean>
+    
+    <beans:bean id="authenticationEntryPoint" class="org.springframework.security.web.authentication.LoginUrlAuthenticationEntryPoint">
+    	<beans:property name="loginFormUrl" value="/login"></beans:property>
+    </beans:bean>
+    
+    <beans:bean id="crmAuthenticationManager" class="org.springframework.security.authentication.ProviderManager">
+    	<beans:property name="providers">
+    		<beans:list>
+    			<beans:bean class="org.springframework.security.authentication.dao.DaoAuthenticationProvider">
+    				<beans:property name="userDetailsService">
+    					<beans:bean class="net.tot3g.omclient.service.impl.CRMUserDetailsService"></beans:bean>
+    				</beans:property>
+    				<beans:property name="passwordEncoder">
+    					<beans:bean class="org.springframework.security.authentication.encoding.PlaintextPasswordEncoder"></beans:bean>
+    				</beans:property>
+    			</beans:bean>
+    		</beans:list>
+    	</beans:property>
+    </beans:bean>
+</beans:beans>

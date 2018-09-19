@@ -1,0 +1,16 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:imp="http://implementation.web.api.icc.services.osp.in.alcatel.com" xmlns:xsd="http://pojo.web.api.icc.services.osp.in.alcatel.com/xsd">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <imp:create>
+         <imp:subLineIdentifier>{0}</imp:subLineIdentifier>
+         <imp:idType>1</imp:idType>
+         <imp:sogSub>
+             <xsd:serviceOfferGroupRef>{1}</xsd:serviceOfferGroupRef>
+            <xsd:creationDate>{3}</xsd:creationDate><!-- 2015-05-28T00:00:00 -->
+            <xsd:serviceRetailerName>{2}</xsd:serviceRetailerName> <!-- TOT3G -->
+            <xsd:state>1</xsd:state>
+            <xsd:stopDate>{4}</xsd:stopDate><!-- 2015-05-29T00:00:00 -->
+         </imp:sogSub>
+      </imp:create>
+   </soapenv:Body>
+</soapenv:Envelope>

@@ -1,0 +1,21 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:spa="http://nsn.com/npm/SoapProvisioningInterface/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <soapenv:Header />
+    <soapenv:Body>
+        <spa:deleteService>
+            <spa:request>
+                <spa:service>
+                <!--    <spa:serviceIdentifier spa:serviceCode="NPSMMSProfileInstance" /> -->
+		<spa:serviceIdentifier spa:serviceCode="NPSProfileInstance" />
+                    <spa:attributes>
+                        <spa:attribute spa:name="Msisdn" xsi:type="spa:singlevalue">
+                            <spa:value xsi:type="xsd:string">{0}</spa:value>
+                        </spa:attribute>
+		        <spa:attribute spa:name="messageId" xsi:type="spa:singlevalue">
+                            <spa:value xsi:type="xsd:string">verify</spa:value>
+                        </spa:attribute>
+                    </spa:attributes>
+                </spa:service>
+            </spa:request>
+        </spa:deleteService>
+    </soapenv:Body>
+</soapenv:Envelope>

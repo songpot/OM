@@ -1,0 +1,9 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:srex="http://tot.co.th/totom/srext">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <srex:getServicesRequest>
+         <!--Optional:-->
+         <imsi>{0}</imsi>
+      </srex:getServicesRequest>
+   </soapenv:Body>
+</soapenv:Envelope>

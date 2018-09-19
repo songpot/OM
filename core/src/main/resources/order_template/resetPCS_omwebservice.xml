@@ -1,0 +1,11 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://webservice.view.v2.webservice.totom.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:resetPCS>
+         <web:username>{1}</web:username>
+         <web:password>{1}</web:password>
+         {2}
+         <web:msisdn>{0}</web:msisdn>
+      </web:resetPCS>
+   </soapenv:Body>
+</soapenv:Envelope>

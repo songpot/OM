@@ -1,0 +1,21 @@
+<soapenv:Envelope xmlns:loc="http://www.csapi.org/schema/parlayx/payment/amount_charging/v2_1/local" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <loc:refill>
+         <loc:endUserIdentifier>OM</loc:endUserIdentifier>
+         <loc:originNodeType>EXT</loc:originNodeType>
+         <loc:originHostName>OM</loc:originHostName>
+         <loc:originTransactionID>{0}</loc:originTransactionID>
+         <loc:originTimeStamp>{1}+0700</loc:originTimeStamp>
+         <loc:subscriberNumber>{2}</loc:subscriberNumber>
+         <loc:originOperatorID>OM</loc:originOperatorID>
+         <loc:externalData1>OM</loc:externalData1>
+         <loc:externalData2>{3}</loc:externalData2>
+         <loc:transactionType></loc:transactionType>
+         <loc:transactionCode>{0}</loc:transactionCode>
+         <loc:transactionAmount>{4}</loc:transactionAmount>
+         <loc:transactionCurrency>THB</loc:transactionCurrency>
+         <loc:refillProfileID>{5}</loc:refillProfileID>
+      </loc:refill>
+   </soapenv:Body>
+</soapenv:Envelope>

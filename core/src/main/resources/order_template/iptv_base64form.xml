@@ -1,0 +1,9 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://totiptv.com/TOT60YearsAnniversary/3GBundle/Webservice">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:RequestsUserAccount>
+         <!--Optional:-->
+         <web:requestMessageToTOTiptv>{0}</web:requestMessageToTOTiptv>
+      </web:RequestsUserAccount>
+   </soapenv:Body>
+</soapenv:Envelope>

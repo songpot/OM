@@ -1,0 +1,9 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://webservice.view.v2.webservice.totom.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:internalforOM>
+         <web:command>updatesubdata</web:command>
+         <web:parameter>{0},{1}</web:parameter>
+      </web:internalforOM>
+   </soapenv:Body>
+</soapenv:Envelope>

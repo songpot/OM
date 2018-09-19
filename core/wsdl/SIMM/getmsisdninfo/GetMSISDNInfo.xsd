@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Oracle JAX-WS 2.1.3-07/10/2008 08:41 PM(bt).--><xs:schema version="1.0" targetNamespace="http://webservice.foss.hp.com" xmlns:tns="http://webservice.foss.hp.com" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="getMSISDNInfo" type="tns:getMSISDNInfo"/>
+  <xs:element name="getMSISDNInfoResponse" type="tns:getMSISDNInfoResponse"/>
+  <xs:complexType name="getMSISDNInfo">
+    <xs:sequence>
+      <xs:element name="RequestData" type="tns:getMSISDNInfoRequest" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getMSISDNInfoRequest">
+    <xs:sequence>
+      <xs:element name="getMSISDNInfo" type="tns:getMSISDNInfoRequestData" minOccurs="0"/>
+      <xs:element name="headerData" type="tns:headerRequestData" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getMSISDNInfoRequestData">
+    <xs:sequence>
+      <xs:element name="msisdn" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="headerRequestData">
+    <xs:sequence>
+      <xs:element name="password" type="xs:string" minOccurs="0"/>
+      <xs:element name="username" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getMSISDNInfoResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:getMSISDNInfoResponseData" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getMSISDNInfoResponseData">
+    <xs:sequence>
+      <xs:element name="headerData" type="tns:headerResponseData" minOccurs="0"/>
+      <xs:element name="msisd_info" type="tns:msisdnInfo" minOccurs="0"/>
+      <xs:element name="msisdn" type="xs:string" minOccurs="0"/>
+      <xs:element name="status" type="xs:string" minOccurs="0"/>
+      <xs:element name="vanity_type" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="headerResponseData">
+    <xs:sequence>
+      <xs:element name="resultCode" type="xs:string" minOccurs="0"/>
+      <xs:element name="resultDescription" type="xs:string" minOccurs="0"/>
+      <xs:element name="transactionId" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="msisdnInfo">
+    <xs:sequence>
+      <xs:element name="msisdnInfo" type="tns:msisdnInfoValue" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="msisdnInfoValue">
+    <xs:sequence>
+      <xs:element name="iccid" type="xs:string" minOccurs="0"/>
+      <xs:element name="imsi" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

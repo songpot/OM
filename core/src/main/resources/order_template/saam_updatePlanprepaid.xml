@@ -1,0 +1,82 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+   <soapenv:Body>
+      <saamint:updateService xmlns:saamint="http://nsn.com/npm/SoapProvisioningInterface/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+         <saamint:request>
+            <saamint:service>
+               <saamint:attributes>
+                  <saamint:attribute xsi:type="saamint:singlevalue" saamint:name="identifier" saamint:identifying="true">
+                     <saamint:value xsi:type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema">{0}</saamint:value>
+                  </saamint:attribute>
+                  <saamint:attribute xsi:type="saamint:singlevalue" saamint:name="Imsi">
+                     <saamint:value xsi:type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema">{0}</saamint:value>
+                  </saamint:attribute>
+                  <saamint:attribute xsi:type="saamint:singlevalue" saamint:name="MSISDN">
+                     <saamint:value xsi:type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema">{1}</saamint:value>
+                  </saamint:attribute>
+                  <saamint:attribute xsi:type="saamint:singlevalue" saamint:name="Select_Modify_Operation" saamint:enumeration="true">
+                     <saamint:value xsi:type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema">5</saamint:value>
+                  </saamint:attribute>
+                  <saamint:attribute xsi:type="saamint:singlevalue" saamint:name="TemplateSubscriberIMSI">
+                     <saamint:value xsi:type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema">{2}</saamint:value>
+                  </saamint:attribute>
+                  <saamint:attribute xsi:type="saamint:singlevalue" saamint:name="OldTemplateSubscriberIMSI">
+                     <saamint:value xsi:type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema">{2}</saamint:value>
+                  </saamint:attribute>
+                  <saamint:attribute xsi:type="saamint:singlevalue" saamint:name="DataOnlySubscriber">
+                     <saamint:value xsi:type="xsd:boolean" xmlns:xsd="http://www.w3.org/2001/XMLSchema">false</saamint:value>
+                  </saamint:attribute>
+                  <saamint:attribute xsi:type="saamint:singlevalue" saamint:name="OldDataOnlySubscriber">
+                     <saamint:value xsi:type="xsd:boolean" xmlns:xsd="http://www.w3.org/2001/XMLSchema">false</saamint:value>
+                  </saamint:attribute>
+                  <saamint:attribute xsi:type="saamint:singlevalue" saamint:name="ucsiserv">
+                     <saamint:value xsi:type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema">{3}</saamint:value>
+                  </saamint:attribute>
+                  <saamint:attribute xsi:type="saamint:multivalue" saamint:name="APNList">
+                     <saamint:values>
+                        <saamint:anyType xsi:type="saamint:struct" saamint:operation="create">
+                           <saamint:attributes>
+                              <saamint:attribute xsi:type="saamint:singlevalue" saamint:name="apnName">
+                                 <saamint:value xsi:type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema">internet</saamint:value>
+                              </saamint:attribute>
+                           </saamint:attributes>
+                        </saamint:anyType>
+                     </saamint:values>
+                  </saamint:attribute>
+                  <saamint:attribute xsi:type="saamint:multivalue" saamint:name="OldAPNList">
+                     <saamint:values>
+                        <saamint:anyType xsi:type="saamint:struct" saamint:operation="create">
+                           <saamint:attributes>
+                              <saamint:attribute xsi:type="saamint:singlevalue" saamint:name="apnName">
+                                 <saamint:value xsi:type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema">internet</saamint:value>
+                              </saamint:attribute>
+                           </saamint:attributes>
+                        </saamint:anyType>
+                     </saamint:values>
+                  </saamint:attribute>
+                  <saamint:attribute xsi:type="saamint:singlevalue" saamint:name="op_NPS" saamint:enumeration="true">
+                     <saamint:value xsi:type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema">2</saamint:value>
+                  </saamint:attribute>
+                  <saamint:attribute xsi:type="saamint:singlevalue" saamint:name="NPS_PrepaidFlag">
+                     <saamint:value xsi:type="xsd:boolean" xmlns:xsd="http://www.w3.org/2001/XMLSchema">true</saamint:value>
+                  </saamint:attribute>
+                  <saamint:attribute xsi:type="saamint:singlevalue" saamint:name="NPS_MMSActiveFlag">
+                     <saamint:value xsi:type="xsd:boolean" xmlns:xsd="http://www.w3.org/2001/XMLSchema">false</saamint:value>
+                  </saamint:attribute>
+                  <saamint:attribute xsi:type="saamint:singlevalue" saamint:name="NPS_SMSPrepaidFlag">
+                     <saamint:value xsi:type="xsd:boolean" xmlns:xsd="http://www.w3.org/2001/XMLSchema">true</saamint:value>
+                  </saamint:attribute>
+                  <saamint:attribute xsi:type="saamint:singlevalue" saamint:name="NPS_SMSActiveFlag">
+                     <saamint:value xsi:type="xsd:boolean" xmlns:xsd="http://www.w3.org/2001/XMLSchema">true</saamint:value>
+                  </saamint:attribute>
+                  <saamint:attribute xsi:type="saamint:singlevalue" saamint:name="CMD_paymentType">
+                     <saamint:value xsi:type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema">prepaid</saamint:value>
+                  </saamint:attribute>
+               </saamint:attributes>
+               <saamint:serviceIdentifier>
+                  <saamint:serviceCode>CFS_Nthlr_NPS_ONENDS_Instance_v2</saamint:serviceCode>
+               </saamint:serviceIdentifier>
+            </saamint:service>
+         </saamint:request>
+      </saamint:updateService>
+   </soapenv:Body>
+</soapenv:Envelope>

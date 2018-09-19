@@ -1,0 +1,17 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:spi="http://nsn.com/npm/SoapProvisioningInterface/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <spi:querySubscribedServices>
+         <spi:request xsi:type="spi:queryServicesByTemplateRequest">
+            <spi:service>
+               <spi:serviceIdentifier spi:serviceCode="NTHLR_PDPContext_Instance_v2"/>
+               <spi:attributes>
+                  <spi:attribute spi:identifying="true" spi:name="MSISDN" xsi:type="spi:singlevalue">
+			   <spi:value xsi:type="xsd:string">{0}</spi:value>
+                  </spi:attribute>
+               </spi:attributes>
+            </spi:service>
+         </spi:request>
+      </spi:querySubscribedServices>
+   </soapenv:Body>
+</soapenv:Envelope>

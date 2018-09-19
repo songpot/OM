@@ -1,0 +1,17 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:loc="http://www.csapi.org/schema/parlayx/payment/reserve_amount_charging/v2_1/local">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <loc:reserveAmount>
+         <loc:endUserIdentifier>{0}</loc:endUserIdentifier>
+         <loc:charge>
+            <description>{1}</description>
+            <!--Optional:-->
+            <currency>THB</currency>
+            <!--Optional:-->
+            <amount>{2}</amount>
+            <!--Optional:-->
+            <code>1</code>
+         </loc:charge>
+      </loc:reserveAmount>
+   </soapenv:Body>
+</soapenv:Envelope>

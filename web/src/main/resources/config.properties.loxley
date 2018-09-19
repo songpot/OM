@@ -1,0 +1,12 @@
+om.url=http://172.24.89.57/totom/services/SyncOrderInterface
+SR.url=http://172.24.89.57/totom/services/ServiceRegistryInterface
+saam.url=http://172.24.105.11:9080/SoapProvisioningInterface/v1/services/ServiceActivator
+unreserveMSISDNService.url=	http://172.30.194.131:8080/ISL_EAI/UnreserveMSISDN
+listmsisdn.url=http://172.30.194.131:8080/ISL_EAI/ListMSISDNs
+om.username=oemvno_lox
+om.password=oemvno_lox
+saam.username=nsmuser
+saam.password=nsmuser1
+amountCharging.url=http://192.168.6.86:8000/ChargingService/services/Parlay
+cgwCharging.url=http://192.168.6.86:8000/ChargingService/services/AccountManagement
+getSIMCardInfoService.url=http://172.30.194.131:8080/ISL_EAI/GetSIMCardInfo

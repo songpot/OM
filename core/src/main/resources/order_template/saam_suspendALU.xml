@@ -1,0 +1,30 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+   <soapenv:Body>
+      <saamint:updateService xmlns:saamint="http://nsn.com/npm/SoapProvisioningInterface/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+         <saamint:request>
+            <saamint:service>
+               <saamint:attributes>
+                  <saamint:attribute xsi:type="saamint:singlevalue" saamint:name="aluInstance">
+                     <saamint:value xsi:type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema">ALU_1</saamint:value>
+                  </saamint:attribute>
+                  <saamint:attribute xsi:type="saamint:singlevalue" saamint:name="identifier">
+                     <saamint:value xsi:type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema">{0}</saamint:value>
+                  </saamint:attribute>
+                  <saamint:attribute xsi:type="saamint:singlevalue" saamint:name="serviceRetailerName">
+                     <saamint:value xsi:type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema">{1}</saamint:value>
+                  </saamint:attribute>
+                  <saamint:attribute xsi:type="saamint:singlevalue" saamint:name="subscriberLineIdType">
+                     <saamint:value xsi:type="xsd:int" xmlns:xsd="http://www.w3.org/2001/XMLSchema">2</saamint:value>
+                  </saamint:attribute>
+                  <saamint:attribute xsi:type="saamint:singlevalue" saamint:name="status">
+                     <saamint:value xsi:type="xsd:int" xmlns:xsd="http://www.w3.org/2001/XMLSchema">{2}</saamint:value>
+                  </saamint:attribute>
+               </saamint:attributes>
+               <saamint:serviceIdentifier>
+                  <saamint:serviceCode>ALU_SubscriberInstance_FT</saamint:serviceCode>
+               </saamint:serviceIdentifier>
+            </saamint:service>
+         </saamint:request>
+      </saamint:updateService>
+   </soapenv:Body>
+</soapenv:Envelope>

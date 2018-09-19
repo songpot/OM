@@ -1,0 +1,16 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:imp="http://implementation.web.api.icc.services.osp.in.alcatel.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <imp:adjust>       
+         <imp:identifierLogin>{0}</imp:identifierLogin>
+         <!--Optional:-->
+         <imp:bundleName>{1}</imp:bundleName>
+         <!--Optional:-->
+         <imp:loadAlgorithm>4</imp:loadAlgorithm>
+         <!--Optional:-->
+         <imp:remainingUnits>{2}</imp:remainingUnits>
+         <!--Optional:-->
+         <imp:reason>Credit_Balance_bucket_{3}</imp:reason>
+      </imp:adjust>
+   </soapenv:Body>
+</soapenv:Envelope>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>updated</comment>
+<entry key="mvno">FEEL</entry>
+<entry key="mvno_id">23</entry>
+<entry key="ispolicychangeplanallow">notallow</entry>
+<entry key="isAllowPostpaidSUBMIT">allow</entry>
+<entry key="tpm">8</entry>
+<entry key="voicetoppingpromotion">1040,1041,1018,1019,1020,1021,1022,1036,1013,1024,1025,1038,1039,1042,1046</entry>
+<entry key="imsi_cooperate">520151100000300-520151100000399,520151100000493-520151100000496,520151100099807,520151100112017,520151100327500-520151100328000,520151190073708</entry>
+<entry key="cdr_rating">00:00:00,05:00:00,10:00:00,12:00:00,17:00:00,19:00:00,20:00:00,23:00:00,24:00:00</entry>
+<entry key="cgw_act">true</entry>
+<entry key="modpcs_datarolling">false</entry>
+<entry key="modpcs_timerolling">false</entry>
+<entry key="modpcs_subintime">false</entry>
+<entry key="voicetopping_subintime">true</entry>
+</properties>

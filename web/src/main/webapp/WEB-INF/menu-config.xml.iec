@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MenuConfig>
+    <Displayers>
+        <Displayer name="Velocity" type="net.sf.navigator.displayer.VelocityMenuDisplayer"/>
+    </Displayers>
+    <Menus>
+         <!-- SONGPON 26/9/2555 --> 
+        <Menu name="MainMenu" title="mainMenu.title" page="/mainMenu" roles="ROLE_ADMIN,ROLE_USER,ROLE_EDITOR,ROLE_CALLCENTER,ROLE_UPERCALLCENTER"/>
+        <!-- SONGPON 26/9/2555 --> 
+        <Menu name="OrderMenuforUser" title="menu.order" description="Order Menu" roles="ROLE_USER" width="150">
+        	 <Item name="TreatementSub" title="menu.order.treatementsub" page="/order/treatementUnbar"/>        	         	          
+        </Menu>
+        <Menu name="OrderMenuforUpper" title="menu.order" description="Order Menu" roles="ROLE_ADMIN,ROLE_EDITOR" width="150">
+        	<Item name="AddSubOrder" title="menu.order.addsub" page="/order/addSub"/>  
+            <Item name="ChangePlanOrder" title="menu.order.changeplan" page="/order/changePlan"/>
+            <Item name="ChangeLanguageOrder" title="menu.order.changelanguage" page="/order/changeLanguage"/>
+            <Item name="ChangeImsi" title="menu.order.changeimsi" page="/order/changeImsi"/>
+			<Item name="Bar" title="menu.order.barsub" page="/order/barSub"/>
+			<Item name="UnBar" title="menu.order.unbarsub" page="/order/unbarSub"/>			
+            <Item name="Suspend" title="menu.order.suspend" page="/order/susPend"/> 
+            <Item name="UnSuspend" title="menu.order.unsuspend" page="/order/unsusPend"/>
+            <Item name="TreatementSub" title="menu.order.treatementsub" page="/order/treatementUnbar"/>                       
+        </Menu>
+        <Menu name="OrderMenuforManager" title="menu.order" description="Order Menu" roles="ROLE_MANAGER" width="150">        	
+            <Item name="ChgRoaming" title="menu.order.ChangeRoamingArea" page="/order/roamingArea"/>                                   
+        </Menu>
+        <!-- SONGPON 22/05/2556-->
+        <Menu name="OrderMenuforUPERCALL" title="menu.order" description="Order Menu" roles="ROLE_UPERCALLCENTER"  width="150">
+        	 <Item name="ChangePlanOrder" title="menu.order.changeplan" page="/order/changePlan"/>
+        	 <Item name="Suspend" title="menu.order.suspend" page="/order/susPend"/> 
+             <Item name="UnSuspend" title="menu.order.unsuspend" page="/order/unsusPend"/>
+        	 <Item name="TreatementSub" title="menu.order.treatementsub" page="/order/treatementUnbar"/>
+        	 <Item name="UnBar" title="menu.order.unbarsub" page="/order/unbarSub"/>        	         	          
+        </Menu>
+       
+         <!-- SONGPON 26/9/2555 --> 
+        <Menu name="ServiceRegistry" title="menu.SR"  roles="ROLE_ADMIN,ROLE_USER,ROLE_EDITOR,ROLE_CALLCENTER,ROLE_UPERCALLCENTER" width="150" >        
+            <Item name="QuerySR" title="menu.order.query" page="/order/querySR"/>            
+        </Menu>
+        <Menu name="ErrorManagement" title="menu.Err"  roles="ROLE_ADMIN,ROLE_EDITOR" width="150" >                   
+            <Item name="QueryERR" title="menu.order.queryerr" page="/order/queryError" />
+        </Menu>
+        <Menu name="AdminMenu" title="menu.admin" description="Admin Menu" roles="ROLE_ADMIN" width="150" page="/admin/users">
+            <Item name="ViewUsers" title="menu.admin.users" page="/admin/users"/>  -->
+<!--             <Item name="DelSubRep" title="menu.report.delsubrep" page="/report/repDelsub"/> -->
+<!--             <Item name="ReloadContext" title="menu.admin.reload" page="/admin/reload"/> -->
+<!--             <Item name="FileUpload" title="menu.selectFile" page="/fileupload"/> -->
+        </Menu>
+        
+         <!-- Wanatsanan 01/03/2016 -->
+        <Menu name="ErrorManagementForUser" title="menu.Err"  roles="ROLE_CHECKERROR" width="150" >                   
+            <Item name="QueryERR" title="menu.order.queryerr" page="/order/queryError" />
+            <Item name="QueryORDER" title="menu.order.queryorder" page="/order/queryOrder" />                    
+        </Menu>
+        
+         <!-- SONGPON 26/9/2555 --> 
+        <Menu name="Logout" title="user.logout" page="/logout" roles="ROLE_ADMIN,ROLE_USER,ROLE_EDITOR,ROLE_CALLCENTER,ROLE_UPERCALLCENTER"/>
+    </Menus>
+</MenuConfig>

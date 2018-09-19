@@ -1,0 +1,12 @@
+<RequestUserAccountMessage xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	  <WSVUsername>test</WSVUsername>
+	  <WSVPassword>test</WSVPassword>
+	  <TransactionID>{0}</TransactionID>
+	  <PhoneNo>{1}</PhoneNo>
+	  <RequestType>1</RequestType>
+	  <TimeStamp>{3}</TimeStamp>
+	  <CustomerChannel>2</CustomerChannel>
+	  <PromotionType>{2}</PromotionType>
+	  <OldTransactionID>{4}</OldTransactionID>
+	  <TOTAccountNo>-</TOTAccountNo>
+</RequestUserAccountMessage>

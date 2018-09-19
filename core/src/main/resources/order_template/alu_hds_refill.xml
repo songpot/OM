@@ -1,0 +1,10 @@
+<!DOCTYPE cp_request SYSTEM "cp_req_websvr.dtd">
+<cp_request>
+        <cp_id>TOPCPID</cp_id>
+        <cp_transaction_id>toto</cp_transaction_id>
+        <transaction_description>{1}</transaction_description>
+        <application>1</application>
+        <action>1</action>
+        <user_id type="MSISDN">{0}</user_id>
+        <recharge_id>{3}{2}</recharge_id>
+</cp_request>

@@ -1,0 +1,16 @@
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:imp="http://implementation.web.api.icc.services.osp.in.alcatel.com" xmlns:xsd="http://pojo.web.api.icc.services.osp.in.alcatel.com/xsd">
+   <soap:Header/>
+   <soap:Body>
+      <imp:listSogSubscription>
+         <imp:subscriberId>
+            <xsd:serviceRetailerName>{2}</xsd:serviceRetailerName><!-- TOT3G -->
+            <xsd:subscriberLineId>{0}</xsd:subscriberLineId>
+            <xsd:subscriberLineIdType>1</xsd:subscriberLineIdType>
+         </imp:subscriberId>
+         <imp:sogSubscription>
+            <xsd:serviceOfferGroupRef>{1}</xsd:serviceOfferGroupRef>
+            <xsd:serviceRetailerName>{2}</xsd:serviceRetailerName><!-- TOT3G -->
+         </imp:sogSubscription>
+      </imp:listSogSubscription>
+   </soap:Body>
+</soap:Envelope>

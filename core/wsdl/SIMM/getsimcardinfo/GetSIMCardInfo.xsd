@@ -1,0 +1,59 @@
+<!--Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Oracle JAX-WS 2.1.3-07/10/2008 08:41 PM(bt).-->
+<xs:schema version="1.0" targetNamespace="http://webservice.foss.hp.com" xmlns:tns="http://webservice.foss.hp.com" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:element name="getSIMCardInfo" type="tns:getSIMCardInfo"/>
+   <xs:element name="getSIMCardInfoResponse" type="tns:getSIMCardInfoResponse"/>
+   <xs:complexType name="getSIMCardInfo">
+      <xs:sequence>
+         <xs:element name="RequestData" type="tns:getSIMCardInfoRequest" minOccurs="0"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="getSIMCardInfoRequest">
+      <xs:sequence>
+         <xs:element name="getSIMCardInfo" type="tns:getSIMCardInfoRequestData" minOccurs="0"/>
+         <xs:element name="headerData" type="tns:headerRequestData" minOccurs="0"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="getSIMCardInfoRequestData">
+      <xs:sequence>
+         <xs:element name="iccid" type="xs:string" minOccurs="0"/>
+         <xs:element name="imsi" type="xs:string" minOccurs="0"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="headerRequestData">
+      <xs:sequence>
+         <xs:element name="password" type="xs:string" minOccurs="0"/>
+         <xs:element name="username" type="xs:string" minOccurs="0"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="getSIMCardInfoResponse">
+      <xs:sequence>
+         <xs:element name="return" type="tns:getSIMCardInfoResponseData" minOccurs="0"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="getSIMCardInfoResponseData">
+      <xs:sequence>
+         <xs:element name="algorithm" type="xs:string" minOccurs="0"/>
+         <xs:element name="function_set_indicator" type="xs:string" minOccurs="0"/>
+         <xs:element name="headerData" type="tns:headerResponseData" minOccurs="0"/>
+         <xs:element name="iccid" type="xs:string" minOccurs="0"/>
+         <xs:element name="imsi" type="xs:string" minOccurs="0"/>
+         <xs:element name="ki" type="xs:string" minOccurs="0"/>
+         <xs:element name="msisdn" type="xs:string" minOccurs="0"/>
+         <xs:element name="ota" type="xs:string" minOccurs="0"/>
+         <xs:element name="pin1" type="xs:string" minOccurs="0"/>
+         <xs:element name="pin2" type="xs:string" minOccurs="0"/>
+         <xs:element name="puk1" type="xs:string" minOccurs="0"/>
+         <xs:element name="puk2" type="xs:string" minOccurs="0"/>
+         <xs:element name="service_type" type="xs:string" minOccurs="0"/>
+         <xs:element name="sim_type" type="xs:string" minOccurs="0"/>
+         <xs:element name="transport_key" type="xs:string" minOccurs="0"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="headerResponseData">
+      <xs:sequence>
+         <xs:element name="resultCode" type="xs:string" minOccurs="0"/>
+         <xs:element name="resultDescription" type="xs:string" minOccurs="0"/>
+         <xs:element name="transactionId" type="xs:string" minOccurs="0"/>
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema>

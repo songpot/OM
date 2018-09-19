@@ -1,0 +1,356 @@
+body {
+	padding-top: 80px;
+}
+
+body>.navbar .brand {
+	color: #000000;
+	font-weight: bold;
+	margin-left: 0;
+	margin-right: 20px;
+	padding-left: 0;
+	padding-right: 0;
+	text-shadow: 0 20px 0 rgba(255, 255, 255, 0.1), 20px 20px 20px
+		rgba(255, 255, 255, 0.125);
+}
+
+body#login {
+	padding-bottom: 40px;
+}
+
+.navbar .brand:hover {
+	color: #0099ff;
+}
+
+#nav {
+	width:100%;
+	margin:0 auto;
+}
+
+#nav ul {
+	width: 150%;	
+}
+
+#nav li {
+	width: 100%;
+}
+
+#nav a {
+	text-align:center;
+	width:160px; /* fixed width */
+}
+
+.navbar {
+	width: 100%;
+}
+
+#switchLocale {
+	position: absolute;
+	right: 10px;
+}
+
+h1, h2 {
+	margin-bottom: 10px;
+}
+
+legend {
+	margin-bottom: 0;
+}
+
+/* FORMS */
+.controls.readonly {
+	padding-top: 5px;
+}
+
+.well.form-horizontal .form-actions {
+	margin-bottom: 0;
+}
+
+.btn-group {
+	margin-bottom: 10px;
+}
+
+.btn-group .btn, .form-actions .btn {
+	margin-left: 5px;
+}
+
+#search {
+	float: right;
+	margin-top: -40px;
+}
+
+#search input[type="text"] {
+	display: inline-block;
+}
+
+.form-signin {
+	max-width: 300px;
+	padding: 19px 29px 29px;
+	margin: 20px auto 20px;
+	background-color: #fff;
+	border: 1px solid #e5e5e5;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	-webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .05);
+	-moz-box-shadow: 0 1px 2px rgba(0, 0, 0, .05);
+	box-shadow: 0 1px 2px rgba(0, 0, 0, .05);
+}
+
+table {
+	font-size: 1em;
+	margin: 0 0 1.5em 0;
+	padding: 0;
+	border: 1px solid #000;
+}
+
+table caption {
+	font-weight: bold;
+	margin: 0 0 0 0;
+	padding: 0 0 1.5em 0;
+}
+
+thead {
+	background: #cc0000;
+	color: #fff;
+}
+
+th {
+	font-weight: bold;
+	text-align: left;
+}
+
+td {
+	font-size: 1em;
+}
+
+th, td {
+	padding: 0.7em;
+}
+
+/*********************************
+       Project: CSS Table Galery
+       Title: Like Adwords
+       Author: Cleiton Francisco
+       URL: http://www.cleiton.net/
+       Country: Brazil
+       Update: 2005-12-18
+     *******************************/
+.table {
+	width: 100%;
+}
+
+.table thead, .contribTable th, .tableHeaderTable td {
+	background: #cc0000;
+	color: #fff;
+}
+
+.table thead a, .table thead a:hover, .table thead a:visited,
+	.tableHeaderTable td a {
+	color: #fff;
+}
+
+.table thead th.sorted {
+	background: maroon;
+}
+
+.table thead th.sorted a {
+	color: white;
+}
+
+.table th {
+	font-weight: bold;
+	text-align: left;
+}
+
+.table td {
+	font-size: 1em;
+}
+
+.table th, .table td {
+	padding: 0.7em;
+	border: 1px solid #fff;
+}
+
+.table .odd {
+	background: #eee;
+}
+
+.table tbody tr:hover, .table tr.over, .contribTable tr:hover {
+	background: #ffffd9 !important;
+	/* important needed for Tapestry, as is .table tr:hover */
+}
+
+.table tbody tr:hover td, .table tr.over td, .contribTable tr:hover td {
+	border-top: 1px solid silver;
+	border-bottom: 1px solid silver;
+}
+/* For Tapestry's contribTable */
+.table th table, .table th table td {
+	width: 100%;
+	border: 0;
+}
+
+.contribTable th {
+	padding: 0px !important;
+}
+
+.contribTable th .tableHeaderTable {
+	margin: 0px !important;
+}
+
+.contribTable tr.even {
+	background: #fff !important;
+}
+
+.contribTable tr.odd {
+	background: #eee !important;
+}
+
+div.exportlinks a {
+	text-decoration: none;
+}
+
+div.exportlinks span {
+	background-repeat: no-repeat;
+	background-position: 1px 2px;
+}
+
+span.csv {
+	background-image: url(../images/ico_file_csv.png);
+}
+
+span.excel {
+	background-image: url(../images/ico_file_excel.png);
+}
+
+span.pdf {
+	background-image: url(../images/ico_file_pdf.png);
+}
+
+span.xml {
+	background-image: url(../images/ico_file_xml.png);
+}
+
+span.export {
+	cursor: pointer;
+	display: inline-block;
+	padding: 0 4px 1px 20px;
+}
+
+span.pagebanner {
+	display: block;
+	margin: 0 0 0 10px;
+	padding: 2px 4px 2px 0;
+}
+
+span.pagelinks {
+	display: block;
+	font-size: .95em;
+	margin-bottom: 5px;
+	margin-top: -18px;
+	padding: 2px 0 2px 0;
+	text-align: right;
+	width: 80%;
+}
+
+/* FOOTER */
+#footer {
+	clear: both;
+	margin: 0 auto;
+	padding: 10px 0 20px 0;
+	border-top: 4px solid #f0f0f0;
+	text-align: center;
+	background-color: white;
+	color: #808080;
+	font-size: 0.9em;
+}
+
+#footer a {
+	color: #808080;
+	text-decoration: none;
+	margin-left: 5px;
+}
+
+#footer a:hover {
+	text-decoration: underline;
+}
+
+#footer p {
+	margin: 0;
+}
+
+#footer span.left, #footer span.right {
+	text-align: center;
+	margin: 5px;
+	padding: 0 10px;
+}
+
+/* END FOOTER */
+.hide {
+	display: none;
+}
+
+.left {
+	margin: 10px 10px 5px 0;
+	float: left;
+}
+
+.right {
+	margin: 10px 0 5px 10px;
+	float: right;
+}
+
+/* Responsive
+-------------------------------------------------- */
+
+/* Desktop large
+------------------------- */
+@media ( min-width : 1200px) {
+}
+
+/* Desktop
+------------------------- */
+@media ( max-width : 980px) {
+}
+
+/* Tablet to desktop
+------------------------- */
+@media ( min-width : 768px) and (max-width: 980px) {
+	/* Remove any padding from the body */
+	body {
+		padding-top: 0;
+	}
+}
+
+/* Tablet
+------------------------- */
+@media ( max-width : 767px) {
+	/* Remove any padding from the body */
+	body {
+		padding-top: 0;
+	}
+}
+
+/* Landscape phones
+------------------------- */
+@media ( max-width : 480px) {
+	body {
+		padding-top: 0;
+	}
+	body>.navbar .brand {
+		margin-left: 10px;
+	}
+	#search {
+		float: none;
+		margin-top: 0;
+	}
+}
+
+@media (max-width: 767px) { 
+	.dropdown:hover .dropdown-menu {
+	  visibility: visible;
+	  display:block;
+	  border-radius:0;
+	
+	}
+}

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!DOCTYPE cp_request SYSTEM "cp_req_websvr.dtd">
+<cp_request>
+        <cp_id>OMWEB</cp_id>
+        <cp_transaction_id>{0}</cp_transaction_id>
+        <op_transaction_id></op_transaction_id>
+        <application>1</application>
+        <action>{1}</action>
+        <user_id type="MSISDN">{2}</user_id>
+        <transaction_price>{3}</transaction_price>
+        <transaction_description>Credit_Balance_{4}</transaction_description>
+</cp_request>

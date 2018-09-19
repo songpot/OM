@@ -1,0 +1,7 @@
+<RequestUserForgetPasswordMessage xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <WSVUsername>Test</WSVUsername>
+  <WSVPassword>Test</WSVPassword>
+  <TransactionID>{0}</TransactionID>
+  <Timestamp>{1}</Timestamp>
+  <Phoneno>{2}</Phoneno>
+</RequestUserForgetPasswordMessage>

@@ -1,0 +1,19 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:imp="http://implementation.web.api.icc.services.osp.in.alcatel.com" xmlns:xsd="http://pojo.web.api.icc.services.osp.in.alcatel.com/xsd">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <imp:removeSubscriptions>
+         <imp:removeSubscriptionParam>
+            <xsd:forceRemoval>true</xsd:forceRemoval>
+            <xsd:sogSubs>
+               <xsd:serviceOfferGroupRef>{1}</xsd:serviceOfferGroupRef> <!-- topping_001_SOG -->
+               <xsd:serviceRetailerName>{2}</xsd:serviceRetailerName> <!-- TOT3G -->
+            </xsd:sogSubs>
+            <xsd:subscriberId>
+               <xsd:serviceRetailerName>{2}</xsd:serviceRetailerName> <!-- TOT3G -->
+               <xsd:subscriberLineId>{0}</xsd:subscriberLineId> <!-- 89300060020150220 -->
+               <xsd:subscriberLineIdType>1</xsd:subscriberLineIdType>
+            </xsd:subscriberId>
+         </imp:removeSubscriptionParam>
+      </imp:removeSubscriptions>
+   </soapenv:Body>
+</soapenv:Envelope>

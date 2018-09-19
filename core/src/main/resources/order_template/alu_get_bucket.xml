@@ -1,0 +1,11 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:imp="http://implementation.web.api.icc.services.osp.in.alcatel.com" xmlns:xsd="http://pojo.web.api.icc.services.osp.in.alcatel.com/xsd">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <imp:get>
+         <imp:accountId>{0}</imp:accountId>
+         <imp:accountIdType>1</imp:accountIdType>
+         <imp:bundleName>{1}</imp:bundleName>
+         <imp:loadAlgorithm>4</imp:loadAlgorithm>
+      </imp:get>
+   </soapenv:Body>
+</soapenv:Envelope>

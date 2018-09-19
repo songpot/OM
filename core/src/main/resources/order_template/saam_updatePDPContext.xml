@@ -1,0 +1,32 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+   <soapenv:Body>
+      <saamint:updateService xmlns:saamint="http://nsn.com/npm/SoapProvisioningInterface/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+         <saamint:request>
+            <saamint:service>
+               <saamint:attributes>                  
+                  <saamint:attribute xsi:type="saamint:singlevalue" saamint:name="MSISDN">
+                     <saamint:value xsi:type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema">{0}</saamint:value>
+                  </saamint:attribute>                  
+                  <saamint:attribute xsi:type="saamint:multivalue" saamint:name="pdpContext">
+                     <saamint:values>
+                        <saamint:anyType xsi:type="saamint:struct" saamint:operation="modify">
+                           <saamint:attributes>                             
+                              <saamint:attribute xsi:type="saamint:singlevalue" saamint:name="id">
+                                 <saamint:value xsi:type="xsd:int" xmlns:xsd="http://www.w3.org/2001/XMLSchema">{2}</saamint:value>
+                              </saamint:attribute>
+                              <saamint:attribute xsi:type="saamint:singlevalue" saamint:name="qosProfile">
+                                 <saamint:value xsi:type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema">{1}</saamint:value>
+                              </saamint:attribute>
+                           </saamint:attributes>
+                        </saamint:anyType>                                           
+                     </saamint:values>
+                  </saamint:attribute>                  
+               </saamint:attributes>
+               <saamint:serviceIdentifier>
+                  <saamint:serviceCode>NTHLR_PDPContext_Instance_v2</saamint:serviceCode>
+               </saamint:serviceIdentifier>
+            </saamint:service>
+         </saamint:request>
+      </saamint:updateService>
+   </soapenv:Body>
+</soapenv:Envelope>

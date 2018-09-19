@@ -1,0 +1,63 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+   <soapenv:Body>
+      <saamint:updateService xmlns:saamint="http://nsn.com/npm/SoapProvisioningInterface/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+         <saamint:request>
+            <saamint:service>
+               <saamint:attributes>
+                  <saamint:attribute xsi:type="saamint:singlevalue" saamint:name="aluInstance">
+                     <saamint:value xsi:type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema">ALU_1</saamint:value>
+                  </saamint:attribute>
+                  <saamint:attribute xsi:type="saamint:singlevalue" saamint:name="forceRemoval">
+                     <saamint:value xsi:type="xsd:boolean" xmlns:xsd="http://www.w3.org/2001/XMLSchema">true</saamint:value>
+                  </saamint:attribute>
+                  <saamint:attribute xsi:type="saamint:singlevalue" saamint:name="newSogSubscription">
+                     <saamint:value xsi:type="saamint:struct" saamint:operation="none">
+                        <saamint:attributes>
+                           <saamint:attribute xsi:type="saamint:singlevalue" saamint:name="serviceOfferGroupRef">
+                              <saamint:value xsi:type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema">01_{3}_SOG</saamint:value>
+                           </saamint:attribute>
+                           <saamint:attribute xsi:type="saamint:singlevalue" saamint:name="serviceRetailerName">
+                              <saamint:value xsi:type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema">{1}</saamint:value>
+                           </saamint:attribute>
+                           <saamint:attribute xsi:type="saamint:singlevalue" saamint:name="state">
+                              <saamint:value xsi:type="xsd:int" xmlns:xsd="http://www.w3.org/2001/XMLSchema">1</saamint:value>
+                           </saamint:attribute>
+                        </saamint:attributes>
+                     </saamint:value>
+                  </saamint:attribute>
+                  <saamint:attribute xsi:type="saamint:singlevalue" saamint:name="oldSogSubscription">
+                     <saamint:value xsi:type="saamint:struct" saamint:operation="none">
+                        <saamint:attributes>
+                           <saamint:attribute xsi:type="saamint:singlevalue" saamint:name="serviceOfferGroupRef">
+                              <saamint:value xsi:type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema">01_{2}_SOG</saamint:value>
+                           </saamint:attribute>
+                           <saamint:attribute xsi:type="saamint:singlevalue" saamint:name="serviceRetailerName">
+                              <saamint:value xsi:type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema">{1}</saamint:value>
+                           </saamint:attribute>
+                           <saamint:attribute xsi:type="saamint:singlevalue" saamint:name="state">
+                              <saamint:value xsi:type="xsd:int" xmlns:xsd="http://www.w3.org/2001/XMLSchema">1</saamint:value>
+                           </saamint:attribute>
+                        </saamint:attributes>
+                     </saamint:value>
+                  </saamint:attribute>
+                  <saamint:attribute xsi:type="saamint:singlevalue" saamint:name="serviceRetailerName">
+                     <saamint:value xsi:type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema">{1}</saamint:value>
+                  </saamint:attribute>
+                  <saamint:attribute xsi:type="saamint:singlevalue" saamint:name="subscriberLineId" saamint:identifying="true">
+                     <saamint:value xsi:type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema">{0}</saamint:value>
+                  </saamint:attribute>
+                  <saamint:attribute xsi:type="saamint:singlevalue" saamint:name="identifier">
+                     <saamint:value xsi:type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema">{0}</saamint:value>
+                  </saamint:attribute>
+                  <saamint:attribute xsi:type="saamint:singlevalue" saamint:name="subscriberLineIdType">
+                     <saamint:value xsi:type="xsd:int" xmlns:xsd="http://www.w3.org/2001/XMLSchema">2</saamint:value>
+                  </saamint:attribute>
+               </saamint:attributes>
+               <saamint:serviceIdentifier>
+                  <saamint:serviceCode>ALU_SubscriptionInstance_FT</saamint:serviceCode>
+               </saamint:serviceIdentifier>
+            </saamint:service>
+         </saamint:request>
+      </saamint:updateService>
+   </soapenv:Body>
+</soapenv:Envelope>
