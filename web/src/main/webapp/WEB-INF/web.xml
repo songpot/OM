@@ -157,6 +157,13 @@
       <param-value>75</param-value>
     </init-param>
   </servlet>
+  <servlet>
+  	<description>
+  	</description>
+  	<display-name>RestAPI</display-name>
+  	<servlet-name>RestAPI</servlet-name>
+  	<servlet-class>net.tot3g.omclient.webapp.api.RestAPI</servlet-class>
+  </servlet>
   <servlet-mapping>
     <servlet-name>StickyCaptcha</servlet-name>
     <url-pattern>/app/stickyImg</url-pattern>
@@ -172,6 +179,10 @@
   <servlet-mapping>
     <servlet-name>dispatcher</servlet-name>
     <url-pattern>/app/*</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>RestAPI</servlet-name>
+  	<url-pattern>/app/restapi</url-pattern>
   </servlet-mapping>
   <session-config>
     <session-timeout>10</session-timeout>

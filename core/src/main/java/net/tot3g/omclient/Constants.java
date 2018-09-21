@@ -146,6 +146,8 @@ public final class Constants {
     public static String IN_SERVICERETAILERNAME = "";
     
     public static String OMWEBSERVICE_LOGINCREDENTIAL = "";
+    
+    public static String WHITELISTIP ="";
 
     /**
      * The name of the CSS Theme setting.
@@ -160,15 +162,6 @@ public final class Constants {
      */
     public static String SIMM_TIMEOUT = "";
     public static String NORMAL_TIMEOUT = "";
-    
-    private static final String MVNO_TOT_USR = "oeomweb";
-	private static final String MVNO_365_USR = "oemvno_365";
-	private static final String MVNO_IEC_USR = "oemvno_iec";
-	private static final String MVNO_LOX_USR = "oemvno_lox";
-	private static final String MVNO_MCO_USR = "oemvno_mco";
-	private static final String MVNO_SAM_USR = "oemvno_sam";
-	private static final String MVNO_PEN_USR = "oemvno_penguin";
-	private static final String MVNO_MYW_USR = "oemvno_myw";	
     
 	static {	
 			
@@ -212,7 +205,7 @@ public final class Constants {
 							
 				IN_SERVICERETAILERNAME = ((ApplicationConfigService)ctx.getBean("applicationconfigService")).get("IN_SERVICERETAILERNAME").getValue().toString();				
 				OMWEBSERVICE_LOGINCREDENTIAL = ((ApplicationConfigService)ctx.getBean("applicationconfigService")).get("OMWEBSERVICE_LOGINCREDENTIAL").getValue().toString();
-				
+				WHITELISTIP = ((ApplicationConfigService)ctx.getBean("applicationconfigService")).get("WHITELISTIP").getValue().toString();
 				
 			} catch (Exception e) {
 				// TODO Auto-generated catch block

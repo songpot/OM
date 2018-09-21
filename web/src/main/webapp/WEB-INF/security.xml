@@ -18,7 +18,7 @@
         <intercept-url pattern="/css/**" filters="none"/>  
         <intercept-url pattern="/js/**" filters="none"/>
         
-        
+         <intercept-url pattern="/app/restapi**" filters="none"/>
         <intercept-url pattern="/app/stickyImg*" access="ROLE_ADMIN,ROLE_EDITOR,ROLE_USER,ROLE_CALLCENTER,ROLE_UPERCALLCENTER,ROLE_MANAGER"/>
         <intercept-url pattern="/app/report/**" access="ROLE_ADMIN,ROLE_USER"/>
         <!-- Wanatsanan 01/03/2016 --> 
