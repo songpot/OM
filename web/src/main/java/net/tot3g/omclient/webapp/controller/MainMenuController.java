@@ -25,7 +25,9 @@ import com.hp.foss.webservice.GetSIMCardInfoRequestData;
 import com.hp.foss.webservice.GetSIMCardInfoResponseData;
 
 import net.tot3g.omclient.Constants;
-import net.tot3g.omclient.connector.SIMM.SIMMConnector;
+import net.tot3g.omclient.connector.CGWINConnector;
+import net.tot3g.omclient.connector.SIMMConnector;
+import net.tot3g.omclient.model.ALUInfoSub;
 import net.tot3g.omclient.model.AddSub;
 import net.tot3g.omclient.model.Price_plan;
 import net.tot3g.omclient.model.Response;
@@ -39,7 +41,10 @@ public class MainMenuController extends BaseFormController {
 	
 	@Autowired
 	private SIMMConnector simmconnector;
-
+	
+	@Autowired
+	private CGWINConnector cgwinConnector;
+	
 	@RequestMapping(method = { RequestMethod.GET })
 	protected ModelAndView display(HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
@@ -55,6 +60,11 @@ public class MainMenuController extends BaseFormController {
 		
 		log.info("Testing GetMSISDNInfo Connector");
 		GetMSISDNInfoResponseData responsemsisdndata =  simmconnector.getMSISDNInfo("893000933");
+		
+		log.info("Testing ALUIN Connector");
+		ALUInfoSub alusubinfo =  cgwinConnector.getSubscriberALUInfoSub("66905070602","TOT3G");
+
+
 
 		saveMessage(request,getText("company.name", mvnocode, locale));			
 		

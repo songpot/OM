@@ -28,6 +28,20 @@
      
      <!-- SIM Management -->
      
-    <bean id="simmconnector" class="net.tot3g.omclient.connector.SIMM.SIMMConnectorImpl"></bean>   
+    <bean id="simmconnector" class="net.tot3g.omclient.connector.SIMM.SIMMConnectorImpl"></bean> 
+
+	<bean id="aluin_hds_connection" class="net.tot3g.omclient.connector.common.HTTPConnector">
+    	<property name="sourcesystem" value="aluin_hds_connection"></property>      	
+    </bean> 
+    
+    <bean id="ALUINConnector" class="net.tot3g.omclient.connector.common.SOAPConnector" >		
+	 	<property name="sourcesystem" value="ALUINConnector"></property>  
+	</bean>
+	
+    <bean id="ALUINBucketConnector" class="net.tot3g.omclient.connector.common.SOAPConnector" >		
+		 <property name="sourcesystem" value="ALUINBucketConnector"></property>  
+	</bean>
+	
+	<bean id="cgwinConnector" class="net.tot3g.omclient.connector.ALUIN.CGWINConnectorALUINImpl"></bean>
     
 </beans>

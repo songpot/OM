@@ -14,6 +14,7 @@ import com.hp.foss.webservice.GetSIMCardInfoRequestData;
 import com.hp.foss.webservice.GetSIMCardInfoResponseData;
 import com.hp.foss.webservice.GetSIMCardInfoService;
 
+import net.tot3g.omclient.connector.SIMMConnector;
 import net.tot3g.omclient.dao.Config_EndpointDao;
 import net.tot3g.omclient.model.Config_Endpoint;
 
