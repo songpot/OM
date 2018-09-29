@@ -14,6 +14,7 @@ import net.tot3g.omclient.connector.CGWINConnector;
 import net.tot3g.omclient.connector.common.HTTPConnector;
 import net.tot3g.omclient.connector.common.SOAPConnector;
 import net.tot3g.omclient.model.ALUInfoSub;
+import net.tot3g.omclient.model.APPResponse;
 import net.tot3g.omclient.model.Response;
 
 public class CGWINConnectorALUINImpl implements CGWINConnector {
@@ -491,9 +492,9 @@ public class CGWINConnectorALUINImpl implements CGWINConnector {
 		
 	}
 
-	public Response adjustbalance(String msisdn, String amount, String type,
+	public APPResponse adjustbalance(String msisdn, String amount, String type,
 			String username) {
-		Response res = new Response();
+		APPResponse res = new APPResponse();
 		try {
 			String xml = IOUtils.toString(getClass().getResourceAsStream(this.aluin_adjust));
 			xml = MessageFormat.format(xml, new Object[] {msisdn.substring(2)+"_"+type+"_"+amount,type,msisdn.substring(2),amount,username});
@@ -526,9 +527,9 @@ public class CGWINConnectorALUINImpl implements CGWINConnector {
 		}
 	}
 
-	public Response adjustbalance(String msisdn, String amount, String type,
+	public APPResponse adjustbalance(String msisdn, String amount, String type,
 			String username, String bucket) {
-		Response res = new Response();
+		APPResponse res = new APPResponse();
         try {
         	
         	String identifier = getTagdata("identifierLogin", msisdn.trim(), Constants.IN_SERVICERETAILERNAME);

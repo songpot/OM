@@ -5,10 +5,12 @@
        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"
        default-lazy-init="true">
        
-    <import resource="classpath*:/applicationContext-resources.xml" />   
-
     <!-- Activates scanning of @Autowired -->
     <context:annotation-config/>
+    
+    <import resource="classpath*:/applicationContext-resources.xml" />
+    
+	<import resource="classpath*:/applicationselectorContext.xml" />
 
     <!-- Activates scanning of @Repository and @Service -->
     <context:component-scan base-package="net.tot3g.omclient"/>
@@ -22,14 +24,24 @@
         <property name="dataSource" ref="dataSource"></property>
     </bean>
     
+     <bean id="ws_Mvno_Dao" class="net.tot3g.omclient.dao.jdbc.WS_Mvno_JdbcDao">
+        <property name="dataSource" ref="dataSource"></property>
+    </bean>    
+    
+    <bean id="ws_transaction_sms" class="net.tot3g.omclient.dao.jdbc.WS_Transaction_SMSJdbcDao">
+        <property name="dataSource" ref="dataSource"></property>
+    </bean>    
+    
     <!-- Add new Managers here -->
     
-     <!-- Add new Connector here -->
+    <!-- Add new Connector here -->
      
-     <!-- SIM Management -->
+    <!-- SIM Management -->
      
     <bean id="simmconnector" class="net.tot3g.omclient.connector.SIMM.SIMMConnectorImpl"></bean> 
 
+	<!-- ALUIN Management -->
+	
 	<bean id="aluin_hds_connection" class="net.tot3g.omclient.connector.common.HTTPConnector">
     	<property name="sourcesystem" value="aluin_hds_connection"></property>      	
     </bean> 
@@ -43,5 +55,15 @@
 	</bean>
 	
 	<bean id="cgwinConnector" class="net.tot3g.omclient.connector.ALUIN.CGWINConnectorALUINImpl"></bean>
+	
+	<bean id="jsonconnector" class="net.tot3g.omclient.connector.INTERNAL.JSONConnectorImpl"></bean>	
+	
+	<!-- WebService Controller -->
+	
+	<bean id="pcrfController" class="net.tot3g.omclient.controller.impl.PCRFControllerImpl"></bean>
+	
+	<!-- Utils -->
+	
+	<bean id="sms" class="net.tot3g.omclient.util.SendSMS"></bean>
     
 </beans>

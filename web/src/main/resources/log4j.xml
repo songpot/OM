@@ -53,7 +53,7 @@
     </logger>
    
     <logger name="net.tot3g.omclient">
-        <level value="DEBUG"/>
+        <level value="INFO"/>
     </logger>
 
     <logger name="net.tot3g.omclient.tool">

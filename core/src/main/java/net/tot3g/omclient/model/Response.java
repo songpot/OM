@@ -1,38 +1,21 @@
 package net.tot3g.omclient.model;
 
-import java.io.Serializable;
-
-public class Response implements Serializable{
-	private boolean success;
-	private String orderId;
-	private String code;
+public class Response {
+	
+	private String responseCode;
 	private String description;
 	
-	public boolean isSuccess() {
-		return success;
+	public void setResponseCode(String responseCode) {
+		this.responseCode = responseCode;
 	}
-	public void setSuccess(boolean success) {
-		this.success = success;
-	}
-	public String getCode() {
-		return code;
-	}
-	public void setCode(String code) {
-		this.code = code;
-	}
-	public String getDescription() {
-		return description;
+	public String getResponseCode() {
+		return responseCode;
 	}
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	public String getOrderId() {
-		return orderId;
+	public String getDescription() {
+		return description;
 	}
-	public void setOrderId(String orderId) {
-		this.orderId = orderId;
-	}
-	
-	
-	
+
 }

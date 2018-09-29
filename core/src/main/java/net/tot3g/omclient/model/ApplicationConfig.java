@@ -12,7 +12,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class ApplicationConfig {
 	
 	private int id;
-	private String key;
+	private String appkey;
 	private String value;
 	
 	@Column(name="value")
@@ -23,12 +23,12 @@ public class ApplicationConfig {
 		this.value = value;
 	}
 	
-	@Column(name="key")
+	@Column(name="appkey")
 	public String getKey() {
-		return key;
+		return appkey;
 	}
-	public void setKey(String key) {
-		this.key = key;
+	public void setKey(String appkey) {
+		this.appkey = appkey;
 	}
 	
 	@Id

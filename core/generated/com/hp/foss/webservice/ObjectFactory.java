@@ -35,35 +35,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetSIMCardInfoResponseData }
-     * 
-     */
-    public GetSIMCardInfoResponseData createGetSIMCardInfoResponseData() {
-        return new GetSIMCardInfoResponseData();
-    }
-
-    /**
-     * Create an instance of {@link GetSIMCardInfoRequest }
-     * 
-     */
-    public GetSIMCardInfoRequest createGetSIMCardInfoRequest() {
-        return new GetSIMCardInfoRequest();
-    }
-
-    /**
      * Create an instance of {@link HeaderRequestData }
      * 
      */
     public HeaderRequestData createHeaderRequestData() {
         return new HeaderRequestData();
-    }
-
-    /**
-     * Create an instance of {@link GetSIMCardInfoRequestData }
-     * 
-     */
-    public GetSIMCardInfoRequestData createGetSIMCardInfoRequestData() {
-        return new GetSIMCardInfoRequestData();
     }
 
     /**
@@ -75,6 +51,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link GetSIMCardInfoResponseData }
+     * 
+     */
+    public GetSIMCardInfoResponseData createGetSIMCardInfoResponseData() {
+        return new GetSIMCardInfoResponseData();
+    }
+
+    /**
      * Create an instance of {@link HeaderResponseData }
      * 
      */
@@ -83,11 +67,27 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link GetSIMCardInfoRequestData }
+     * 
+     */
+    public GetSIMCardInfoRequestData createGetSIMCardInfoRequestData() {
+        return new GetSIMCardInfoRequestData();
+    }
+
+    /**
      * Create an instance of {@link GetSIMCardInfoResponse }
      * 
      */
     public GetSIMCardInfoResponse createGetSIMCardInfoResponse() {
         return new GetSIMCardInfoResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetSIMCardInfoRequest }
+     * 
+     */
+    public GetSIMCardInfoRequest createGetSIMCardInfoRequest() {
+        return new GetSIMCardInfoRequest();
     }
 
     /**

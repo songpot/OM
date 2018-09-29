@@ -1,0 +1,1160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://webservice.view.v2.webservice.totom.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://webservice.view.v2.webservice.totom.com" xmlns:intf="http://webservice.view.v2.webservice.totom.com" xmlns:tns1="http://model.omclient.tot3g.net" xmlns:tns2="http://model.webservice.omclient.tot3g.net" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://webservice.view.v2.webservice.totom.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://model.webservice.omclient.tot3g.net"/>
+   <import namespace="http://model.omclient.tot3g.net"/>
+   <element name="suspend">
+    <complexType>
+     <sequence>
+      <element name="username" type="xsd:string"/>
+      <element name="password" type="xsd:string"/>
+      <element name="msisdn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="suspendResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="suspendReturn" type="tns1:Response"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getSIMMMobiletype">
+    <complexType>
+     <sequence>
+      <element name="msisdn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getSIMMMobiletypeResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="getSIMMMobiletypeReturn" type="tns2:SIMMMobileType"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="subscribePCSToOTHER">
+    <complexType>
+     <sequence>
+      <element name="username" type="xsd:string"/>
+      <element name="password" type="xsd:string"/>
+      <element name="priceplan" type="xsd:string"/>
+      <element name="targetmsisdn" type="xsd:string"/>
+      <element name="sourcemsisdn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="subscribePCSToOTHERResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="subscribePCSToOTHERReturn" type="tns1:Response"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="queryStatusBarOfSubscriber">
+    <complexType>
+     <sequence>
+      <element name="username" type="xsd:string"/>
+      <element name="password" type="xsd:string"/>
+      <element name="msisdn" type="xsd:string"/>
+      <element name="iccid" type="xsd:string"/>
+      <element name="imsi" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="queryStatusBarOfSubscriberResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="queryStatusBarOfSubscriberReturn" type="tns2:PublicStatusBar"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="subscribeVoiceTopping">
+    <complexType>
+     <sequence>
+      <element name="username" type="xsd:string"/>
+      <element name="password" type="xsd:string"/>
+      <element name="promotionid" type="xsd:string"/>
+      <element name="msisdn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="subscribeVoiceToppingResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="subscribeVoiceToppingReturn" type="tns1:Response"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="queryLanguageSubscriber">
+    <complexType>
+     <sequence>
+      <element name="username" type="xsd:string"/>
+      <element name="password" type="xsd:string"/>
+      <element name="msisdn" type="xsd:string"/>
+      <element name="iccid" type="xsd:string"/>
+      <element name="imsi" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="queryLanguageSubscriberResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="queryLanguageSubscriberReturn" type="tns2:PublicLanguageData"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="unsuspend">
+    <complexType>
+     <sequence>
+      <element name="username" type="xsd:string"/>
+      <element name="password" type="xsd:string"/>
+      <element name="msisdn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="unsuspendResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="unsuspendReturn" type="tns1:Response"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="subscribePCS">
+    <complexType>
+     <sequence>
+      <element name="username" type="xsd:string"/>
+      <element name="password" type="xsd:string"/>
+      <element name="priceplan" type="xsd:string"/>
+      <element name="msisdn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="subscribePCSResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="subscribePCSReturn" type="tns1:Response"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="resetPCS">
+    <complexType>
+     <sequence>
+      <element name="username" type="xsd:string"/>
+      <element name="password" type="xsd:string"/>
+      <element name="usedQuota" type="xsd:string"/>
+      <element name="totalQuota" type="xsd:string"/>
+      <element name="QOS" type="xsd:string"/>
+      <element name="billingstartdate" type="xsd:string"/>
+      <element name="billingduration" type="xsd:string"/>
+      <element name="msisdn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="resetPCSResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="resetPCSReturn" type="tns1:Response"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="subscribeDATA">
+    <complexType>
+     <sequence>
+      <element name="username" type="xsd:string"/>
+      <element name="password" type="xsd:string"/>
+      <element name="priceplan" type="xsd:string"/>
+      <element name="msisdn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="subscribeDATAResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="subscribeDATAReturn" type="tns1:Response"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="querySubscriber">
+    <complexType>
+     <sequence>
+      <element name="username" type="xsd:string"/>
+      <element name="password" type="xsd:string"/>
+      <element name="msisdn" type="xsd:string"/>
+      <element name="iccid" type="xsd:string"/>
+      <element name="imsi" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="querySubscriberResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="querySubscriberReturn" type="tns2:PublicSubData"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="unsubscribePCS">
+    <complexType>
+     <sequence>
+      <element name="username" type="xsd:string"/>
+      <element name="password" type="xsd:string"/>
+      <element name="msisdn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="unsubscribePCSResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="unsubscribePCSReturn" type="tns1:Response"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="barsubscriber">
+    <complexType>
+     <sequence>
+      <element name="username" type="xsd:string"/>
+      <element name="password" type="xsd:string"/>
+      <element name="msisdn" type="xsd:string"/>
+      <element name="operation" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="barsubscriberResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="barsubscriberReturn" type="tns1:Response"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="unbarsubscriber">
+    <complexType>
+     <sequence>
+      <element name="username" type="xsd:string"/>
+      <element name="password" type="xsd:string"/>
+      <element name="msisdn" type="xsd:string"/>
+      <element name="operation" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="unbarsubscriberResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="unbarsubscriberReturn" type="tns1:Response"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="activateMSISDN">
+    <complexType>
+     <sequence>
+      <element name="username" type="xsd:string"/>
+      <element name="password" type="xsd:string"/>
+      <element name="msisdn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="activateMSISDNResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="activateMSISDNReturn" type="tns1:Response"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="changePlan">
+    <complexType>
+     <sequence>
+      <element name="username" type="xsd:string"/>
+      <element name="password" type="xsd:string"/>
+      <element name="priceplan" type="xsd:string"/>
+      <element name="msisdn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="changePlanResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="changePlanReturn" type="tns1:Response"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="changeLanguage">
+    <complexType>
+     <sequence>
+      <element name="username" type="xsd:string"/>
+      <element name="password" type="xsd:string"/>
+      <element name="msisdn" type="xsd:string"/>
+      <element name="langcode" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="changeLanguageResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="changeLanguageReturn" type="tns1:Response"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+  <schema elementFormDefault="qualified" targetNamespace="http://model.omclient.tot3g.net" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://model.webservice.omclient.tot3g.net"/>
+   <complexType name="Response">
+    <sequence>
+     <element name="code" nillable="true" type="xsd:string"/>
+     <element name="description" nillable="true" type="xsd:string"/>
+     <element name="orderId" nillable="true" type="xsd:string"/>
+     <element name="success" type="xsd:boolean"/>
+    </sequence>
+   </complexType>
+  </schema>
+  <schema elementFormDefault="qualified" targetNamespace="http://model.webservice.omclient.tot3g.net" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://model.omclient.tot3g.net"/>
+   <complexType name="SIMMMobileType">
+    <sequence>
+     <element name="brandcode" nillable="true" type="xsd:string"/>
+     <element name="mobiletype" nillable="true" type="xsd:string"/>
+     <element name="msisdn" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="PublicStatusBar">
+    <sequence>
+     <element name="data" nillable="true" type="xsd:string"/>
+     <element name="domestic_Roaming" nillable="true" type="xsd:string"/>
+     <element name="msisdn" nillable="true" type="xsd:string"/>
+     <element name="service_RBT" nillable="true" type="xsd:string"/>
+     <element name="service_SMS_In" nillable="true" type="xsd:string"/>
+     <element name="service_SMS_Out" nillable="true" type="xsd:string"/>
+     <element name="service_VMS" nillable="true" type="xsd:string"/>
+     <element name="service_VVMS" nillable="true" type="xsd:string"/>
+     <element name="service_VdoCall" nillable="true" type="xsd:string"/>
+     <element name="status" nillable="true" type="xsd:string"/>
+     <element name="suspend" type="xsd:boolean"/>
+     <element name="treatmentbar" type="xsd:boolean"/>
+     <element name="voice_In" nillable="true" type="xsd:string"/>
+     <element name="voice_Out" nillable="true" type="xsd:string"/>
+     <element name="wiFi" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="PublicLanguageData">
+    <sequence>
+     <element name="language" nillable="true" type="xsd:string"/>
+     <element name="success" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="PublicSubData">
+    <sequence>
+     <element name="iccid" nillable="true" type="xsd:string"/>
+     <element name="imsi" nillable="true" type="xsd:string"/>
+     <element name="mobiletype" nillable="true" type="xsd:string"/>
+     <element name="msisdn" nillable="true" type="xsd:string"/>
+     <element name="planID" nillable="true" type="xsd:string"/>
+     <element name="success" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="changeLanguageResponse">
+
+      <wsdl:part element="impl:changeLanguageResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="changePlanRequest">
+
+      <wsdl:part element="impl:changePlan" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="suspendRequest">
+
+      <wsdl:part element="impl:suspend" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="subscribeVoiceToppingRequest">
+
+      <wsdl:part element="impl:subscribeVoiceTopping" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="barsubscriberResponse">
+
+      <wsdl:part element="impl:barsubscriberResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="unsuspendResponse">
+
+      <wsdl:part element="impl:unsuspendResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="suspendResponse">
+
+      <wsdl:part element="impl:suspendResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="subscribePCSToOTHERResponse">
+
+      <wsdl:part element="impl:subscribePCSToOTHERResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="queryStatusBarOfSubscriberRequest">
+
+      <wsdl:part element="impl:queryStatusBarOfSubscriber" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="barsubscriberRequest">
+
+      <wsdl:part element="impl:barsubscriber" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="unbarsubscriberRequest">
+
+      <wsdl:part element="impl:unbarsubscriber" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="unbarsubscriberResponse">
+
+      <wsdl:part element="impl:unbarsubscriberResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getSIMMMobiletypeRequest">
+
+      <wsdl:part element="impl:getSIMMMobiletype" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="resetPCSRequest">
+
+      <wsdl:part element="impl:resetPCS" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="subscribeVoiceToppingResponse">
+
+      <wsdl:part element="impl:subscribeVoiceToppingResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="activateMSISDNResponse">
+
+      <wsdl:part element="impl:activateMSISDNResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="subscribePCSResponse">
+
+      <wsdl:part element="impl:subscribePCSResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="activateMSISDNRequest">
+
+      <wsdl:part element="impl:activateMSISDN" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="changePlanResponse">
+
+      <wsdl:part element="impl:changePlanResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="subscribeDATAResponse">
+
+      <wsdl:part element="impl:subscribeDATAResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="subscribeDATARequest">
+
+      <wsdl:part element="impl:subscribeDATA" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="unsuspendRequest">
+
+      <wsdl:part element="impl:unsuspend" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="queryLanguageSubscriberRequest">
+
+      <wsdl:part element="impl:queryLanguageSubscriber" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="querySubscriberRequest">
+
+      <wsdl:part element="impl:querySubscriber" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="querySubscriberResponse">
+
+      <wsdl:part element="impl:querySubscriberResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="unsubscribePCSResponse">
+
+      <wsdl:part element="impl:unsubscribePCSResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="subscribePCSRequest">
+
+      <wsdl:part element="impl:subscribePCS" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="queryLanguageSubscriberResponse">
+
+      <wsdl:part element="impl:queryLanguageSubscriberResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="subscribePCSToOTHERRequest">
+
+      <wsdl:part element="impl:subscribePCSToOTHER" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="resetPCSResponse">
+
+      <wsdl:part element="impl:resetPCSResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="changeLanguageRequest">
+
+      <wsdl:part element="impl:changeLanguage" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getSIMMMobiletypeResponse">
+
+      <wsdl:part element="impl:getSIMMMobiletypeResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="unsubscribePCSRequest">
+
+      <wsdl:part element="impl:unsubscribePCS" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="queryStatusBarOfSubscriberResponse">
+
+      <wsdl:part element="impl:queryStatusBarOfSubscriberResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="OMWebService">
+
+      <wsdl:operation name="suspend">
+
+         <wsdl:input message="impl:suspendRequest" name="suspendRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:suspendResponse" name="suspendResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getSIMMMobiletype">
+
+         <wsdl:input message="impl:getSIMMMobiletypeRequest" name="getSIMMMobiletypeRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getSIMMMobiletypeResponse" name="getSIMMMobiletypeResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="subscribePCSToOTHER">
+
+         <wsdl:input message="impl:subscribePCSToOTHERRequest" name="subscribePCSToOTHERRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:subscribePCSToOTHERResponse" name="subscribePCSToOTHERResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="queryStatusBarOfSubscriber">
+
+         <wsdl:input message="impl:queryStatusBarOfSubscriberRequest" name="queryStatusBarOfSubscriberRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:queryStatusBarOfSubscriberResponse" name="queryStatusBarOfSubscriberResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="subscribeVoiceTopping">
+
+         <wsdl:input message="impl:subscribeVoiceToppingRequest" name="subscribeVoiceToppingRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:subscribeVoiceToppingResponse" name="subscribeVoiceToppingResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="queryLanguageSubscriber">
+
+         <wsdl:input message="impl:queryLanguageSubscriberRequest" name="queryLanguageSubscriberRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:queryLanguageSubscriberResponse" name="queryLanguageSubscriberResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="unsuspend">
+
+         <wsdl:input message="impl:unsuspendRequest" name="unsuspendRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:unsuspendResponse" name="unsuspendResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="subscribePCS">
+
+         <wsdl:input message="impl:subscribePCSRequest" name="subscribePCSRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:subscribePCSResponse" name="subscribePCSResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="resetPCS">
+
+         <wsdl:input message="impl:resetPCSRequest" name="resetPCSRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:resetPCSResponse" name="resetPCSResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="subscribeDATA">
+
+         <wsdl:input message="impl:subscribeDATARequest" name="subscribeDATARequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:subscribeDATAResponse" name="subscribeDATAResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="querySubscriber">
+
+         <wsdl:input message="impl:querySubscriberRequest" name="querySubscriberRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:querySubscriberResponse" name="querySubscriberResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="unsubscribePCS">
+
+         <wsdl:input message="impl:unsubscribePCSRequest" name="unsubscribePCSRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:unsubscribePCSResponse" name="unsubscribePCSResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="barsubscriber">
+
+         <wsdl:input message="impl:barsubscriberRequest" name="barsubscriberRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:barsubscriberResponse" name="barsubscriberResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="unbarsubscriber">
+
+         <wsdl:input message="impl:unbarsubscriberRequest" name="unbarsubscriberRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:unbarsubscriberResponse" name="unbarsubscriberResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="activateMSISDN">
+
+         <wsdl:input message="impl:activateMSISDNRequest" name="activateMSISDNRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:activateMSISDNResponse" name="activateMSISDNResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="changePlan">
+
+         <wsdl:input message="impl:changePlanRequest" name="changePlanRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:changePlanResponse" name="changePlanResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="changeLanguage">
+
+         <wsdl:input message="impl:changeLanguageRequest" name="changeLanguageRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:changeLanguageResponse" name="changeLanguageResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="OMWebServiceSoapBinding" type="impl:OMWebService">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="suspend">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="suspendRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="suspendResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getSIMMMobiletype">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getSIMMMobiletypeRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getSIMMMobiletypeResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="subscribePCSToOTHER">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="subscribePCSToOTHERRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="subscribePCSToOTHERResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="queryStatusBarOfSubscriber">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="queryStatusBarOfSubscriberRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="queryStatusBarOfSubscriberResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="subscribeVoiceTopping">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="subscribeVoiceToppingRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="subscribeVoiceToppingResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="queryLanguageSubscriber">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="queryLanguageSubscriberRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="queryLanguageSubscriberResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="unsuspend">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="unsuspendRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="unsuspendResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="subscribePCS">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="subscribePCSRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="subscribePCSResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="resetPCS">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="resetPCSRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="resetPCSResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="subscribeDATA">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="subscribeDATARequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="subscribeDATAResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="querySubscriber">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="querySubscriberRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="querySubscriberResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="unsubscribePCS">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="unsubscribePCSRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="unsubscribePCSResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="barsubscriber">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="barsubscriberRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="barsubscriberResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="unbarsubscriber">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="unbarsubscriberRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="unbarsubscriberResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="activateMSISDN">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="activateMSISDNRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="activateMSISDNResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="changePlan">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="changePlanRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="changePlanResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="changeLanguage">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="changeLanguageRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="changeLanguageResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="OMWebServiceService">
+
+      <wsdl:port binding="impl:OMWebServiceSoapBinding" name="OMWebService">
+
+         <wsdlsoap:address location="http://localhost:8080/webservice/services/OMWebService"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

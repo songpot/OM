@@ -19,7 +19,7 @@ public class ApplicationConfigJdbcDao extends JdbcDaoSupport implements Applicat
 	private static final RowMapper<ApplicationConfig> ROW_MAPPER = new RowMapper<ApplicationConfig>() {
 		public ApplicationConfig mapRow(ResultSet rs, int rowNum) throws SQLException {
 			ApplicationConfig config = new ApplicationConfig();
-			config.setId(rs.getInt("id"));
+			config.setId(rs.getInt("Application_Config_ID"));
 			config.setKey(rs.getString("appkey"));
 			config.setValue(rs.getString("value"));
 						

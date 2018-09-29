@@ -1,0 +1,170 @@
+<ns1:deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java" xmlns:ns1="http://xml.apache.org/axis/wsdd/">
+ <ns1:globalConfiguration>
+  <ns1:parameter name="sendMultiRefs" value="true"/>
+  <ns1:parameter name="disablePrettyXML" value="true"/>
+  <ns1:parameter name="adminPassword" value="admin"/>
+  <ns1:parameter name="attachments.Directory" value="D:\WorkSpace\TOT\FlowOne\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\webservice\WEB-INF\attachments"/>
+  <ns1:parameter name="dotNetSoapEncFix" value="true"/>
+  <ns1:parameter name="enableNamespacePrefixOptimization" value="false"/>
+  <ns1:parameter name="sendXMLDeclaration" value="true"/>
+  <ns1:parameter name="sendXsiTypes" value="true"/>
+  <ns1:parameter name="attachments.implementation" value="org.apache.axis.attachments.AttachmentsImpl"/>
+  <ns1:requestFlow>
+   <ns1:handler type="java:org.apache.axis.handlers.JWSHandler">
+    <ns1:parameter name="scope" value="session"/>
+   </ns1:handler>
+   <ns1:handler type="java:org.apache.axis.handlers.JWSHandler">
+    <ns1:parameter name="scope" value="request"/>
+    <ns1:parameter name="extension" value=".jwr"/>
+   </ns1:handler>
+  </ns1:requestFlow>
+ </ns1:globalConfiguration>
+ <ns1:handler name="URLMapper" type="java:org.apache.axis.handlers.http.URLMapper"/>
+ <ns1:handler name="Authenticate" type="java:org.apache.axis.handlers.SimpleAuthenticationHandler"/>
+ <ns1:handler name="LocalResponder" type="java:org.apache.axis.transport.local.LocalResponder"/>
+ <ns1:service name="AdminService" provider="java:MSG">
+  <ns1:parameter name="allowedMethods" value="AdminService"/>
+  <ns1:parameter name="enableRemoteAdmin" value="false"/>
+  <ns1:parameter name="className" value="org.apache.axis.utils.Admin"/>
+  <ns1:namespace>http://xml.apache.org/axis/wsdd/</ns1:namespace>
+ </ns1:service>
+ <ns1:service name="Version" provider="java:RPC">
+  <ns1:parameter name="allowedMethods" value="getVersion"/>
+  <ns1:parameter name="className" value="org.apache.axis.Version"/>
+ </ns1:service>
+ <ns1:service name="OMWebService" provider="java:RPC" style="wrapped" use="literal">
+  <ns3:operation name="suspend" qname="ns1:suspend" returnQName="ns1:suspendReturn" returnType="ns2:Response" soapAction="" xmlns:ns1="http://webservice.view.v2.webservice.totom.com" xmlns:ns2="http://model.omclient.tot3g.net" xmlns:ns3="http://xml.apache.org/axis/wsdd/">
+   <ns3:parameter qname="ns1:username" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <ns3:parameter qname="ns1:password" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <ns3:parameter qname="ns1:msisdn" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  </ns3:operation>
+  <ns1:operation name="getSIMMMobiletype" qname="ns3:getSIMMMobiletype" returnQName="ns3:getSIMMMobiletypeReturn" returnType="ns4:SIMMMobileType" soapAction="" xmlns:ns3="http://webservice.view.v2.webservice.totom.com" xmlns:ns4="http://model.webservice.omclient.tot3g.net">
+   <ns1:parameter qname="ns3:msisdn" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  </ns1:operation>
+  <ns1:operation name="subscribePCSToOTHER" qname="ns5:subscribePCSToOTHER" returnQName="ns5:subscribePCSToOTHERReturn" returnType="ns6:Response" soapAction="" xmlns:ns5="http://webservice.view.v2.webservice.totom.com" xmlns:ns6="http://model.omclient.tot3g.net">
+   <ns1:parameter qname="ns5:username" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <ns1:parameter qname="ns5:password" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <ns1:parameter qname="ns5:priceplan" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <ns1:parameter qname="ns5:targetmsisdn" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <ns1:parameter qname="ns5:sourcemsisdn" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  </ns1:operation>
+  <ns1:operation name="queryStatusBarOfSubscriber" qname="ns7:queryStatusBarOfSubscriber" returnQName="ns7:queryStatusBarOfSubscriberReturn" returnType="ns8:PublicStatusBar" soapAction="" xmlns:ns7="http://webservice.view.v2.webservice.totom.com" xmlns:ns8="http://model.webservice.omclient.tot3g.net">
+   <ns1:parameter qname="ns7:username" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <ns1:parameter qname="ns7:password" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <ns1:parameter qname="ns7:msisdn" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <ns1:parameter qname="ns7:iccid" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <ns1:parameter qname="ns7:imsi" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  </ns1:operation>
+  <ns1:operation name="subscribeVoiceTopping" qname="ns9:subscribeVoiceTopping" returnQName="ns9:subscribeVoiceToppingReturn" returnType="ns10:Response" soapAction="" xmlns:ns10="http://model.omclient.tot3g.net" xmlns:ns9="http://webservice.view.v2.webservice.totom.com">
+   <ns1:parameter qname="ns9:username" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <ns1:parameter qname="ns9:password" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <ns1:parameter qname="ns9:promotionid" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <ns1:parameter qname="ns9:msisdn" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  </ns1:operation>
+  <ns1:operation name="queryLanguageSubscriber" qname="ns11:queryLanguageSubscriber" returnQName="ns11:queryLanguageSubscriberReturn" returnType="ns12:PublicLanguageData" soapAction="" xmlns:ns11="http://webservice.view.v2.webservice.totom.com" xmlns:ns12="http://model.webservice.omclient.tot3g.net">
+   <ns1:parameter qname="ns11:username" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <ns1:parameter qname="ns11:password" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <ns1:parameter qname="ns11:msisdn" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <ns1:parameter qname="ns11:iccid" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <ns1:parameter qname="ns11:imsi" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  </ns1:operation>
+  <ns1:operation name="unsuspend" qname="ns13:unsuspend" returnQName="ns13:unsuspendReturn" returnType="ns14:Response" soapAction="" xmlns:ns13="http://webservice.view.v2.webservice.totom.com" xmlns:ns14="http://model.omclient.tot3g.net">
+   <ns1:parameter qname="ns13:username" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <ns1:parameter qname="ns13:password" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <ns1:parameter qname="ns13:msisdn" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  </ns1:operation>
+  <ns1:operation name="subscribePCS" qname="ns15:subscribePCS" returnQName="ns15:subscribePCSReturn" returnType="ns16:Response" soapAction="" xmlns:ns15="http://webservice.view.v2.webservice.totom.com" xmlns:ns16="http://model.omclient.tot3g.net">
+   <ns1:parameter qname="ns15:username" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <ns1:parameter qname="ns15:password" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <ns1:parameter qname="ns15:priceplan" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <ns1:parameter qname="ns15:msisdn" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  </ns1:operation>
+  <ns1:operation name="resetPCS" qname="ns17:resetPCS" returnQName="ns17:resetPCSReturn" returnType="ns18:Response" soapAction="" xmlns:ns17="http://webservice.view.v2.webservice.totom.com" xmlns:ns18="http://model.omclient.tot3g.net">
+   <ns1:parameter qname="ns17:username" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <ns1:parameter qname="ns17:password" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <ns1:parameter qname="ns17:usedQuota" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <ns1:parameter qname="ns17:totalQuota" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <ns1:parameter qname="ns17:QOS" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <ns1:parameter qname="ns17:billingstartdate" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <ns1:parameter qname="ns17:billingduration" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <ns1:parameter qname="ns17:msisdn" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  </ns1:operation>
+  <ns1:operation name="subscribeDATA" qname="ns19:subscribeDATA" returnQName="ns19:subscribeDATAReturn" returnType="ns20:Response" soapAction="" xmlns:ns19="http://webservice.view.v2.webservice.totom.com" xmlns:ns20="http://model.omclient.tot3g.net">
+   <ns1:parameter qname="ns19:username" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <ns1:parameter qname="ns19:password" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <ns1:parameter qname="ns19:priceplan" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <ns1:parameter qname="ns19:msisdn" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  </ns1:operation>
+  <ns1:operation name="querySubscriber" qname="ns21:querySubscriber" returnQName="ns21:querySubscriberReturn" returnType="ns22:PublicSubData" soapAction="" xmlns:ns21="http://webservice.view.v2.webservice.totom.com" xmlns:ns22="http://model.webservice.omclient.tot3g.net">
+   <ns1:parameter qname="ns21:username" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <ns1:parameter qname="ns21:password" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <ns1:parameter qname="ns21:msisdn" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <ns1:parameter qname="ns21:iccid" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <ns1:parameter qname="ns21:imsi" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  </ns1:operation>
+  <ns1:operation name="unsubscribePCS" qname="ns23:unsubscribePCS" returnQName="ns23:unsubscribePCSReturn" returnType="ns24:Response" soapAction="" xmlns:ns23="http://webservice.view.v2.webservice.totom.com" xmlns:ns24="http://model.omclient.tot3g.net">
+   <ns1:parameter qname="ns23:username" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <ns1:parameter qname="ns23:password" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <ns1:parameter qname="ns23:msisdn" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  </ns1:operation>
+  <ns1:operation name="barsubscriber" qname="ns25:barsubscriber" returnQName="ns25:barsubscriberReturn" returnType="ns26:Response" soapAction="" xmlns:ns25="http://webservice.view.v2.webservice.totom.com" xmlns:ns26="http://model.omclient.tot3g.net">
+   <ns1:parameter qname="ns25:username" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <ns1:parameter qname="ns25:password" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <ns1:parameter qname="ns25:msisdn" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <ns1:parameter qname="ns25:operation" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  </ns1:operation>
+  <ns1:operation name="unbarsubscriber" qname="ns27:unbarsubscriber" returnQName="ns27:unbarsubscriberReturn" returnType="ns28:Response" soapAction="" xmlns:ns27="http://webservice.view.v2.webservice.totom.com" xmlns:ns28="http://model.omclient.tot3g.net">
+   <ns1:parameter qname="ns27:username" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <ns1:parameter qname="ns27:password" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <ns1:parameter qname="ns27:msisdn" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <ns1:parameter qname="ns27:operation" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  </ns1:operation>
+  <ns1:operation name="activateMSISDN" qname="ns29:activateMSISDN" returnQName="ns29:activateMSISDNReturn" returnType="ns30:Response" soapAction="" xmlns:ns29="http://webservice.view.v2.webservice.totom.com" xmlns:ns30="http://model.omclient.tot3g.net">
+   <ns1:parameter qname="ns29:username" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <ns1:parameter qname="ns29:password" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <ns1:parameter qname="ns29:msisdn" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  </ns1:operation>
+  <ns1:operation name="changePlan" qname="ns31:changePlan" returnQName="ns31:changePlanReturn" returnType="ns32:Response" soapAction="" xmlns:ns31="http://webservice.view.v2.webservice.totom.com" xmlns:ns32="http://model.omclient.tot3g.net">
+   <ns1:parameter qname="ns31:username" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <ns1:parameter qname="ns31:password" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <ns1:parameter qname="ns31:priceplan" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <ns1:parameter qname="ns31:msisdn" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  </ns1:operation>
+  <ns1:operation name="changeLanguage" qname="ns33:changeLanguage" returnQName="ns33:changeLanguageReturn" returnType="ns34:Response" soapAction="" xmlns:ns33="http://webservice.view.v2.webservice.totom.com" xmlns:ns34="http://model.omclient.tot3g.net">
+   <ns1:parameter qname="ns33:username" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <ns1:parameter qname="ns33:password" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <ns1:parameter qname="ns33:msisdn" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <ns1:parameter qname="ns33:langcode" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  </ns1:operation>
+  <ns1:parameter name="allowedMethods" value="suspend barsubscriber queryLanguageSubscriber changeLanguage unsuspend querySubscriber getSIMMMobiletype resetPCS unbarsubscriber activateMSISDN subscribePCSToOTHER changePlan queryStatusBarOfSubscriber subscribeDATA subscribeVoiceTopping unsubscribePCS subscribePCS"/>
+  <ns1:parameter name="typeMappingVersion" value="1.2"/>
+  <ns1:parameter name="wsdlPortType" value="OMWebService"/>
+  <ns1:parameter name="className" value="com.totom.webservice.v2.view.webservice.OMWebService"/>
+  <ns1:parameter name="wsdlServicePort" value="OMWebService"/>
+  <ns1:parameter name="schemaQualified" value="http://model.omclient.tot3g.net,http://webservice.view.v2.webservice.totom.com,http://model.webservice.omclient.tot3g.net"/>
+  <ns1:parameter name="wsdlTargetNamespace" value="http://webservice.view.v2.webservice.totom.com"/>
+  <ns1:parameter name="wsdlServiceElement" value="OMWebServiceService"/>
+  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns35:PublicLanguageData" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:net.tot3g.omclient.webservice.model.PublicLanguageData" xmlns:ns35="http://model.webservice.omclient.tot3g.net"/>
+  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns36:Response" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:net.tot3g.omclient.model.Response" xmlns:ns36="http://model.omclient.tot3g.net"/>
+  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns37:PublicSubData" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:net.tot3g.omclient.webservice.model.PublicSubData" xmlns:ns37="http://model.webservice.omclient.tot3g.net"/>
+  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns38:SIMMMobileType" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:net.tot3g.omclient.webservice.model.SIMMMobileType" xmlns:ns38="http://model.webservice.omclient.tot3g.net"/>
+  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns39:PublicStatusBar" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:net.tot3g.omclient.webservice.model.PublicStatusBar" xmlns:ns39="http://model.webservice.omclient.tot3g.net"/>
+ </ns1:service>
+ <ns1:transport name="http">
+  <ns1:requestFlow>
+   <ns1:handler type="URLMapper"/>
+   <ns1:handler type="java:org.apache.axis.handlers.http.HTTPAuthHandler"/>
+  </ns1:requestFlow>
+  <ns1:parameter name="qs:list" value="org.apache.axis.transport.http.QSListHandler"/>
+  <ns1:parameter name="qs:wsdl" value="org.apache.axis.transport.http.QSWSDLHandler"/>
+  <ns1:parameter name="qs.list" value="org.apache.axis.transport.http.QSListHandler"/>
+  <ns1:parameter name="qs.method" value="org.apache.axis.transport.http.QSMethodHandler"/>
+  <ns1:parameter name="qs:method" value="org.apache.axis.transport.http.QSMethodHandler"/>
+  <ns1:parameter name="qs.wsdl" value="org.apache.axis.transport.http.QSWSDLHandler"/>
+ </ns1:transport>
+ <ns1:transport name="local">
+  <ns1:responseFlow>
+   <ns1:handler type="LocalResponder"/>
+  </ns1:responseFlow>
+ </ns1:transport>
+</ns1:deployment>

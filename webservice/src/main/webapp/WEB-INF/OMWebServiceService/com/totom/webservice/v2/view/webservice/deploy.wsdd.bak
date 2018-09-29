@@ -1,0 +1,169 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from OMWebServiceService WSDL service -->
+
+  <service name="OMWebService" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://webservice.view.v2.webservice.totom.com"/>
+      <parameter name="wsdlServiceElement" value="OMWebServiceService"/>
+      <parameter name="schemaQualified" value="http://model.omclient.tot3g.net,http://webservice.view.v2.webservice.totom.com,http://model.webservice.omclient.tot3g.net"/>
+      <parameter name="wsdlServicePort" value="OMWebService"/>
+      <parameter name="className" value="com.totom.webservice.v2.view.webservice.OMWebServiceSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="OMWebService"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="suspend" qname="operNS:suspend" xmlns:operNS="http://webservice.view.v2.webservice.totom.com" returnQName="retNS:suspendReturn" xmlns:retNS="http://webservice.view.v2.webservice.totom.com" returnType="rtns:Response" xmlns:rtns="http://model.omclient.tot3g.net" soapAction="" >
+        <parameter qname="pns:username" xmlns:pns="http://webservice.view.v2.webservice.totom.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:password" xmlns:pns="http://webservice.view.v2.webservice.totom.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:msisdn" xmlns:pns="http://webservice.view.v2.webservice.totom.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getSIMMMobiletype" qname="operNS:getSIMMMobiletype" xmlns:operNS="http://webservice.view.v2.webservice.totom.com" returnQName="retNS:getSIMMMobiletypeReturn" xmlns:retNS="http://webservice.view.v2.webservice.totom.com" returnType="rtns:SIMMMobileType" xmlns:rtns="http://model.webservice.omclient.tot3g.net" soapAction="" >
+        <parameter qname="pns:msisdn" xmlns:pns="http://webservice.view.v2.webservice.totom.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="subscribePCSToOTHER" qname="operNS:subscribePCSToOTHER" xmlns:operNS="http://webservice.view.v2.webservice.totom.com" returnQName="retNS:subscribePCSToOTHERReturn" xmlns:retNS="http://webservice.view.v2.webservice.totom.com" returnType="rtns:Response" xmlns:rtns="http://model.omclient.tot3g.net" soapAction="" >
+        <parameter qname="pns:username" xmlns:pns="http://webservice.view.v2.webservice.totom.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:password" xmlns:pns="http://webservice.view.v2.webservice.totom.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:priceplan" xmlns:pns="http://webservice.view.v2.webservice.totom.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:targetmsisdn" xmlns:pns="http://webservice.view.v2.webservice.totom.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:sourcemsisdn" xmlns:pns="http://webservice.view.v2.webservice.totom.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="queryStatusBarOfSubscriber" qname="operNS:queryStatusBarOfSubscriber" xmlns:operNS="http://webservice.view.v2.webservice.totom.com" returnQName="retNS:queryStatusBarOfSubscriberReturn" xmlns:retNS="http://webservice.view.v2.webservice.totom.com" returnType="rtns:PublicStatusBar" xmlns:rtns="http://model.webservice.omclient.tot3g.net" soapAction="" >
+        <parameter qname="pns:username" xmlns:pns="http://webservice.view.v2.webservice.totom.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:password" xmlns:pns="http://webservice.view.v2.webservice.totom.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:msisdn" xmlns:pns="http://webservice.view.v2.webservice.totom.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:iccid" xmlns:pns="http://webservice.view.v2.webservice.totom.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:imsi" xmlns:pns="http://webservice.view.v2.webservice.totom.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="subscribeVoiceTopping" qname="operNS:subscribeVoiceTopping" xmlns:operNS="http://webservice.view.v2.webservice.totom.com" returnQName="retNS:subscribeVoiceToppingReturn" xmlns:retNS="http://webservice.view.v2.webservice.totom.com" returnType="rtns:Response" xmlns:rtns="http://model.omclient.tot3g.net" soapAction="" >
+        <parameter qname="pns:username" xmlns:pns="http://webservice.view.v2.webservice.totom.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:password" xmlns:pns="http://webservice.view.v2.webservice.totom.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:promotionid" xmlns:pns="http://webservice.view.v2.webservice.totom.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:msisdn" xmlns:pns="http://webservice.view.v2.webservice.totom.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="queryLanguageSubscriber" qname="operNS:queryLanguageSubscriber" xmlns:operNS="http://webservice.view.v2.webservice.totom.com" returnQName="retNS:queryLanguageSubscriberReturn" xmlns:retNS="http://webservice.view.v2.webservice.totom.com" returnType="rtns:PublicLanguageData" xmlns:rtns="http://model.webservice.omclient.tot3g.net" soapAction="" >
+        <parameter qname="pns:username" xmlns:pns="http://webservice.view.v2.webservice.totom.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:password" xmlns:pns="http://webservice.view.v2.webservice.totom.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:msisdn" xmlns:pns="http://webservice.view.v2.webservice.totom.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:iccid" xmlns:pns="http://webservice.view.v2.webservice.totom.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:imsi" xmlns:pns="http://webservice.view.v2.webservice.totom.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="unsuspend" qname="operNS:unsuspend" xmlns:operNS="http://webservice.view.v2.webservice.totom.com" returnQName="retNS:unsuspendReturn" xmlns:retNS="http://webservice.view.v2.webservice.totom.com" returnType="rtns:Response" xmlns:rtns="http://model.omclient.tot3g.net" soapAction="" >
+        <parameter qname="pns:username" xmlns:pns="http://webservice.view.v2.webservice.totom.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:password" xmlns:pns="http://webservice.view.v2.webservice.totom.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:msisdn" xmlns:pns="http://webservice.view.v2.webservice.totom.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="subscribePCS" qname="operNS:subscribePCS" xmlns:operNS="http://webservice.view.v2.webservice.totom.com" returnQName="retNS:subscribePCSReturn" xmlns:retNS="http://webservice.view.v2.webservice.totom.com" returnType="rtns:Response" xmlns:rtns="http://model.omclient.tot3g.net" soapAction="" >
+        <parameter qname="pns:username" xmlns:pns="http://webservice.view.v2.webservice.totom.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:password" xmlns:pns="http://webservice.view.v2.webservice.totom.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:priceplan" xmlns:pns="http://webservice.view.v2.webservice.totom.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:msisdn" xmlns:pns="http://webservice.view.v2.webservice.totom.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="resetPCS" qname="operNS:resetPCS" xmlns:operNS="http://webservice.view.v2.webservice.totom.com" returnQName="retNS:resetPCSReturn" xmlns:retNS="http://webservice.view.v2.webservice.totom.com" returnType="rtns:Response" xmlns:rtns="http://model.omclient.tot3g.net" soapAction="" >
+        <parameter qname="pns:username" xmlns:pns="http://webservice.view.v2.webservice.totom.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:password" xmlns:pns="http://webservice.view.v2.webservice.totom.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:usedQuota" xmlns:pns="http://webservice.view.v2.webservice.totom.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:totalQuota" xmlns:pns="http://webservice.view.v2.webservice.totom.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:QOS" xmlns:pns="http://webservice.view.v2.webservice.totom.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:billingstartdate" xmlns:pns="http://webservice.view.v2.webservice.totom.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:billingduration" xmlns:pns="http://webservice.view.v2.webservice.totom.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:msisdn" xmlns:pns="http://webservice.view.v2.webservice.totom.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="subscribeDATA" qname="operNS:subscribeDATA" xmlns:operNS="http://webservice.view.v2.webservice.totom.com" returnQName="retNS:subscribeDATAReturn" xmlns:retNS="http://webservice.view.v2.webservice.totom.com" returnType="rtns:Response" xmlns:rtns="http://model.omclient.tot3g.net" soapAction="" >
+        <parameter qname="pns:username" xmlns:pns="http://webservice.view.v2.webservice.totom.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:password" xmlns:pns="http://webservice.view.v2.webservice.totom.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:priceplan" xmlns:pns="http://webservice.view.v2.webservice.totom.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:msisdn" xmlns:pns="http://webservice.view.v2.webservice.totom.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="querySubscriber" qname="operNS:querySubscriber" xmlns:operNS="http://webservice.view.v2.webservice.totom.com" returnQName="retNS:querySubscriberReturn" xmlns:retNS="http://webservice.view.v2.webservice.totom.com" returnType="rtns:PublicSubData" xmlns:rtns="http://model.webservice.omclient.tot3g.net" soapAction="" >
+        <parameter qname="pns:username" xmlns:pns="http://webservice.view.v2.webservice.totom.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:password" xmlns:pns="http://webservice.view.v2.webservice.totom.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:msisdn" xmlns:pns="http://webservice.view.v2.webservice.totom.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:iccid" xmlns:pns="http://webservice.view.v2.webservice.totom.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:imsi" xmlns:pns="http://webservice.view.v2.webservice.totom.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="unsubscribePCS" qname="operNS:unsubscribePCS" xmlns:operNS="http://webservice.view.v2.webservice.totom.com" returnQName="retNS:unsubscribePCSReturn" xmlns:retNS="http://webservice.view.v2.webservice.totom.com" returnType="rtns:Response" xmlns:rtns="http://model.omclient.tot3g.net" soapAction="" >
+        <parameter qname="pns:username" xmlns:pns="http://webservice.view.v2.webservice.totom.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:password" xmlns:pns="http://webservice.view.v2.webservice.totom.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:msisdn" xmlns:pns="http://webservice.view.v2.webservice.totom.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="barsubscriber" qname="operNS:barsubscriber" xmlns:operNS="http://webservice.view.v2.webservice.totom.com" returnQName="retNS:barsubscriberReturn" xmlns:retNS="http://webservice.view.v2.webservice.totom.com" returnType="rtns:Response" xmlns:rtns="http://model.omclient.tot3g.net" soapAction="" >
+        <parameter qname="pns:username" xmlns:pns="http://webservice.view.v2.webservice.totom.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:password" xmlns:pns="http://webservice.view.v2.webservice.totom.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:msisdn" xmlns:pns="http://webservice.view.v2.webservice.totom.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:operation" xmlns:pns="http://webservice.view.v2.webservice.totom.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="unbarsubscriber" qname="operNS:unbarsubscriber" xmlns:operNS="http://webservice.view.v2.webservice.totom.com" returnQName="retNS:unbarsubscriberReturn" xmlns:retNS="http://webservice.view.v2.webservice.totom.com" returnType="rtns:Response" xmlns:rtns="http://model.omclient.tot3g.net" soapAction="" >
+        <parameter qname="pns:username" xmlns:pns="http://webservice.view.v2.webservice.totom.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:password" xmlns:pns="http://webservice.view.v2.webservice.totom.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:msisdn" xmlns:pns="http://webservice.view.v2.webservice.totom.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:operation" xmlns:pns="http://webservice.view.v2.webservice.totom.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="activateMSISDN" qname="operNS:activateMSISDN" xmlns:operNS="http://webservice.view.v2.webservice.totom.com" returnQName="retNS:activateMSISDNReturn" xmlns:retNS="http://webservice.view.v2.webservice.totom.com" returnType="rtns:Response" xmlns:rtns="http://model.omclient.tot3g.net" soapAction="" >
+        <parameter qname="pns:username" xmlns:pns="http://webservice.view.v2.webservice.totom.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:password" xmlns:pns="http://webservice.view.v2.webservice.totom.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:msisdn" xmlns:pns="http://webservice.view.v2.webservice.totom.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="changePlan" qname="operNS:changePlan" xmlns:operNS="http://webservice.view.v2.webservice.totom.com" returnQName="retNS:changePlanReturn" xmlns:retNS="http://webservice.view.v2.webservice.totom.com" returnType="rtns:Response" xmlns:rtns="http://model.omclient.tot3g.net" soapAction="" >
+        <parameter qname="pns:username" xmlns:pns="http://webservice.view.v2.webservice.totom.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:password" xmlns:pns="http://webservice.view.v2.webservice.totom.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:priceplan" xmlns:pns="http://webservice.view.v2.webservice.totom.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:msisdn" xmlns:pns="http://webservice.view.v2.webservice.totom.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="changeLanguage" qname="operNS:changeLanguage" xmlns:operNS="http://webservice.view.v2.webservice.totom.com" returnQName="retNS:changeLanguageReturn" xmlns:retNS="http://webservice.view.v2.webservice.totom.com" returnType="rtns:Response" xmlns:rtns="http://model.omclient.tot3g.net" soapAction="" >
+        <parameter qname="pns:username" xmlns:pns="http://webservice.view.v2.webservice.totom.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:password" xmlns:pns="http://webservice.view.v2.webservice.totom.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:msisdn" xmlns:pns="http://webservice.view.v2.webservice.totom.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:langcode" xmlns:pns="http://webservice.view.v2.webservice.totom.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <parameter name="allowedMethods" value="suspend barsubscriber queryLanguageSubscriber changeLanguage unsuspend querySubscriber getSIMMMobiletype resetPCS unbarsubscriber activateMSISDN subscribePCSToOTHER changePlan queryStatusBarOfSubscriber subscribeDATA subscribeVoiceTopping unsubscribePCS subscribePCS"/>
+
+      <typeMapping
+        xmlns:ns="http://model.webservice.omclient.tot3g.net"
+        qname="ns:PublicLanguageData"
+        type="java:net.tot3g.omclient.webservice.model.PublicLanguageData"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://model.omclient.tot3g.net"
+        qname="ns:Response"
+        type="java:net.tot3g.omclient.model.Response"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://model.webservice.omclient.tot3g.net"
+        qname="ns:PublicSubData"
+        type="java:net.tot3g.omclient.webservice.model.PublicSubData"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://model.webservice.omclient.tot3g.net"
+        qname="ns:SIMMMobileType"
+        type="java:net.tot3g.omclient.webservice.model.SIMMMobileType"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://model.webservice.omclient.tot3g.net"
+        qname="ns:PublicStatusBar"
+        type="java:net.tot3g.omclient.webservice.model.PublicStatusBar"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+  </service>
+</deployment>

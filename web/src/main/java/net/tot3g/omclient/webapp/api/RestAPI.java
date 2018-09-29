@@ -1,6 +1,7 @@
 package net.tot3g.omclient.webapp.api;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Arrays;
 import java.util.List;
 
@@ -11,6 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import net.tot3g.omclient.Constants;
 
@@ -28,9 +31,17 @@ public class RestAPI extends HttpServlet {
     }
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * 
+	 * JSON Return SPEC
+	 *  
+	 *  issuccess
+	 *  omorderid
+	 *  remaining
+	 *  mobiletype
+	 * 
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		PrintWriter out = response.getWriter();
 		String rawrequest = org.apache.commons.io.IOUtils.toString(request.getInputStream(),"UTF-8");
     	//jObj = new JSONObject(rawrequest);
 		
@@ -44,6 +55,22 @@ public class RestAPI extends HttpServlet {
         if(list.contains(remoteip)){
         	log.info("Allowed list");
         	log.info(rawrequest);
+        	
+        	JSONObject responseobj = new JSONObject();
+        	
+            try {
+				responseobj.put("issuccess", "true");
+				responseobj.put("omorderid", "0000000");
+				responseobj.put("remaining", "1000");
+				responseobj.put("mobiletype", "POST");
+				
+			} catch (JSONException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+            
+
+            out.println(responseobj.toString());
         }
         else
         {

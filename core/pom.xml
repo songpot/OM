@@ -12,7 +12,7 @@
     
     <artifactId>core</artifactId>
     <packaging>jar</packaging>
-    <name>AppFuse Modular Application - Core</name>
+    <name>OM - Core</name>
     
     <build>
 		<defaultGoal>install</defaultGoal>
@@ -706,6 +706,11 @@
 			<artifactId>activemq-spring</artifactId>
 			<version>5.10.0</version>
 		</dependency>
+		 <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20090211</version>
+        </dependency>
 	</dependencies>
 
 	<reporting>

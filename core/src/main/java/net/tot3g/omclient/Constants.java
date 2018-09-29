@@ -148,6 +148,14 @@ public final class Constants {
     public static String OMWEBSERVICE_LOGINCREDENTIAL = "";
     
     public static String WHITELISTIP ="";
+    
+    public static boolean DEBUG = false;
+    
+    public static String[] MAPPINGOM;
+    
+    public static String[] DESCRIPTIONMAPPINGOM;
+    
+    public static String[] SMSSENDING;
 
     /**
      * The name of the CSS Theme setting.
@@ -160,14 +168,18 @@ public final class Constants {
      *  SIMM TimeOut
      * 
      */
-    public static String SIMM_TIMEOUT = "";
-    public static String NORMAL_TIMEOUT = "";
+    public static String SIMM_TIMEOUT = "1000";
+    public static String NORMAL_TIMEOUT = "1000";
+    
+    public static final String IPSERVER ="http://localhost:8080";
+    
+    public static StaticApplicationContext ctx;
     
 	static {	
 			
 			try
 			{
-				StaticApplicationContext ctx = new StaticApplicationContext();
+				ctx = new StaticApplicationContext();
 				XmlBeanDefinitionReader xmlReader = new XmlBeanDefinitionReader(ctx);
 				xmlReader.loadBeanDefinitions(new ClassPathResource("applicationContext.xml"));
 				ctx.refresh();
@@ -205,7 +217,13 @@ public final class Constants {
 							
 				IN_SERVICERETAILERNAME = ((ApplicationConfigService)ctx.getBean("applicationconfigService")).get("IN_SERVICERETAILERNAME").getValue().toString();				
 				OMWEBSERVICE_LOGINCREDENTIAL = ((ApplicationConfigService)ctx.getBean("applicationconfigService")).get("OMWEBSERVICE_LOGINCREDENTIAL").getValue().toString();
+				
+				//WEBSERVICE PARAMETER
 				WHITELISTIP = ((ApplicationConfigService)ctx.getBean("applicationconfigService")).get("WHITELISTIP").getValue().toString();
+				MAPPINGOM = ((ApplicationConfigService)ctx.getBean("applicationconfigService")).get("SMSMAPPING").getValue().split(",");	
+				DESCRIPTIONMAPPINGOM = ((ApplicationConfigService)ctx.getBean("applicationconfigService")).get("SMSMAPPINGDESCRIPTION").getValue().toString().split(",");		
+				SMSSENDING = ((ApplicationConfigService)ctx.getBean("applicationconfigService")).get("SMSSENDINGPARAMETER").getValue().toString().split(",");
+				DEBUG  = Boolean.valueOf(((ApplicationConfigService)ctx.getBean("applicationconfigService")).get("DEBUG").getValue().toString());
 				
 			} catch (Exception e) {
 				// TODO Auto-generated catch block

@@ -33,6 +33,8 @@
         <property name="testOnBorrow" value="true"></property>
     </bean>
     
+    <!-- 
+    
      <bean id="dataSourceOM" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
         <property name="driverClassName" value="${jdbcom.driverClassName}"/>
         <property name="url" value="${jdbcom.url}"/>
@@ -45,7 +47,94 @@
         <property name="defaultAutoCommit" value="true"/>
         <property name="validationQuery" value="select 1 from dual"></property>
         <property name="testOnBorrow" value="true"></property>
-    </bean>     
+    </bean>    
+    
+     -->        
+     
+     <bean id="dataTOTOMWeb" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://172.30.190.31/omwebdb" />
+        <property name="username" value="root"/>
+        <property name="password" value="tot3G.net"/>
+        <property name="maxActive" value="100"/>
+        <property name="initialSize" value="50"></property>
+        <property name="maxWait" value="1000"/>
+        <property name="poolPreparedStatements" value="true"/>
+        <property name="defaultAutoCommit" value="true"/>
+        <property name="validationQuery" value="select 1 from dual"></property>
+        <property name="testOnBorrow" value="true"></property>
+        <property name="connectionProperties" value="useUnicode=true;characterEncoding=UTF-8"/>
+    </bean>          
+    
+     <bean id="dataLoxleyOMWeb" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://localhost/loxley" />
+        <property name="username" value="root"/>
+        <property name="password" value="tot3G.net"/>
+        <property name="maxActive" value="100"/>
+        <property name="initialSize" value="50"></property>
+        <property name="maxWait" value="1000"/>
+        <property name="poolPreparedStatements" value="true"/>
+        <property name="defaultAutoCommit" value="true"/>
+        <property name="validationQuery" value="select 1 from dual"></property>
+        <property name="testOnBorrow" value="true"></property>
+    </bean>   
+    
+     <bean id="dataIecOMWeb" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://localhost/iec" />
+        <property name="username" value="root"/>
+        <property name="password" value="tot3G.net"/>
+        <property name="maxActive" value="100"/>
+        <property name="initialSize" value="50"></property>
+        <property name="maxWait" value="1000"/>
+        <property name="poolPreparedStatements" value="true"/>
+        <property name="defaultAutoCommit" value="true"/>
+        <property name="validationQuery" value="select 1 from dual"></property>
+        <property name="testOnBorrow" value="true"></property>
+    </bean>  
+
+    <bean id="dataPenguinOMWeb" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://localhost/penguin" />
+        <property name="username" value="root"/>
+        <property name="password" value="tot3G.net"/>
+        <property name="maxActive" value="100"/>
+        <property name="initialSize" value="50"></property>
+        <property name="maxWait" value="1000"/>
+        <property name="poolPreparedStatements" value="true"/>
+        <property name="defaultAutoCommit" value="true"/>
+        <property name="validationQuery" value="select 1 from dual"></property>
+        <property name="testOnBorrow" value="true"></property>
+    </bean>    
+    
+    <bean id="datamyworldOMWeb" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://localhost/myworld" />
+        <property name="username" value="root"/>
+        <property name="password" value="tot3G.net"/>
+        <property name="maxActive" value="100"/>
+        <property name="initialSize" value="50"></property>
+        <property name="maxWait" value="1000"/>
+        <property name="poolPreparedStatements" value="true"/>
+        <property name="defaultAutoCommit" value="true"/>
+        <property name="validationQuery" value="select 1 from dual"></property>
+        <property name="testOnBorrow" value="true"></property>
+    </bean> 
+    
+    <bean id="datafeelOMWeb" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://localhost/feel" />
+        <property name="username" value="root"/>
+        <property name="password" value="tot3G.net"/>
+        <property name="maxActive" value="100"/>
+        <property name="initialSize" value="50"></property>
+        <property name="maxWait" value="1000"/>
+        <property name="poolPreparedStatements" value="true"/>
+        <property name="defaultAutoCommit" value="true"/>
+        <property name="validationQuery" value="select 1 from dual"></property>
+        <property name="testOnBorrow" value="true"></property>
+    </bean> 
 		
 
 </beans>

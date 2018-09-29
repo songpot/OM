@@ -4,6 +4,8 @@ public class PCSElementData {
 	
 	private String billResetType;
 	private String usedQuota;
+	private String enddate;
+	private String toppingname;	
 	private String billingResetDuration;
 	private String serviceId;
 	private String billingStartDate;
@@ -44,6 +46,18 @@ public class PCSElementData {
 	}
 	public void setTotalQuota(String totalQuota) {
 		this.totalQuota = totalQuota;
+	}
+	public String getEnddate() {
+		return enddate;
+	}
+	public void setEnddate(String enddate) {
+		this.enddate = enddate;
+	}
+	public String getToppingname() {
+		return toppingname;
+	}
+	public void setToppingname(String toppingname) {
+		this.toppingname = toppingname;
 	}
 	
 
